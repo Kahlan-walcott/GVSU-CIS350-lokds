@@ -4,7 +4,7 @@ Team members:
 
 # Introduction
 
-(In 2-4 paragraphs, describe your project concept)
+(In 2-4 paragraphs, describe your project concept) (Also define some loosely defined features of your project using bullet points)
 
 # Anticipated Technologies
 
@@ -21,3 +21,4 @@ Team members:
 # Anticipated Problems
 
 (Describe any problems you foresee that you will need to overcome)
+Remember this is a living document is expected to be changed as you make progress on your project.

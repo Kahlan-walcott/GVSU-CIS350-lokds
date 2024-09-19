@@ -1,15 +1,15 @@
-Team name:
+Team name: lokds
 
-Lokds
+
 Team members:
-Olivia Foster
+Olivia Foster, Kahlan Walcott
 # Introduction
 
 (In 2-4 paragraphs, describe your project concept) (Also define some loosely defined features of your project using bullet points)
 
 # Anticipated Technologies
 
-The anticipated technologies needed to complete this project include: the IDE pycharm, the open-source python library pygame, and json maps. 
+The anticipated technologies needed to complete this project include: the IDE Pycharm, the open-source python library pygame, and json maps. 
 
 # Method/Approach
 

@@ -1,4 +1,4 @@
-Team name: lokds
+﻿Team name: lokds
 
 
 Team members:
@@ -48,5 +48,5 @@ Using a mix of the agile scrum and prototype process models we anticipate the fo
 
 # Anticipated Problems
 
-(Describe any problems you foresee that you will need to overcome)
-Remember this is a living document is expected to be changed as you make progress on your project.
+The Anticipated Problems include:
+* Getting the code to work on all computers

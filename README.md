@@ -8,7 +8,7 @@ Project description (~1 paragraph)
 * [Kahlan Walcott](https://github.com/Kahlan-walcott/CIS350-HW2-Walcott) (Role 3, Role 4)
 * [Lasya Priya Vemalla](https://github.com/vemallal/CIS350-HW2-Vemalla)
  (Role 5, Role 6)
-* Member 4
+* [Sanidhya Didagur](https://github.com/sdidagur1/CIS350-HW2-DIDAGUR.git)
 * Member 5
 
 ## Prerequisites

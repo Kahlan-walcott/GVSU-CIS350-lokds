@@ -50,3 +50,5 @@ Using a mix of the agile scrum and prototype process models we anticipate the fo
 
 The Anticipated Problems include:
 * Getting the code to work on all computers
+* Have a general coding style that we all understand
+* Putting descriptive comments above every line so everyone knows what that line is doing

@@ -9,7 +9,7 @@ Project description (~1 paragraph)
 * [Lasya Priya Vemalla](https://github.com/vemallal/CIS350-HW2-Vemalla)
  (Role 5, Role 6)
 * [Sanidhya Didagur](https://github.com/sdidagur1/CIS350-HW2-DIDAGUR.git)
-* Member 5
+* [Delaney Kelley](https://github.com/kelleyde/CIS350-HW2-Kelley.git)
 
 ## Prerequisites
 

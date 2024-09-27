@@ -2,7 +2,7 @@
 
 
 Team members:
-Olivia Foster, Kahlan Walcott, Sanidhya Didagur
+Olivia Foster, Kahlan Walcott, Sanidhya Didagur, Delaney Kelley
 # Introduction
 
 (In 2-4 paragraphs, describe your project concept) (Also define some loosely defined features of your project using bullet points)

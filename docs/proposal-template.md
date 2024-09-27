@@ -15,6 +15,8 @@ The anticipated technologies needed to complete this project include: the IDE Py
 
 (What is your estimated "plan of attack" for developing this project)
 
+Our teams plans on having a lot of changes based on our own abilities and time constraints, a very much code as we go approach. An AGILE SCRUM method fits best into this fast past project we have set. Overall our plan of attack will be to divide tasks and aim to get them done within a certain time frame. We can then go back and evaluate any issues or constraints we had while moving forward into the next period of coding and testing. It is of note that our goals and time frames will change throughout the project based on where we are at. This is because we are prepared to change a lot of the features of our video game based on our individual abilities.
+
 # Estimated Timeline
 
 Using a mix of the agile scrum and prototype process models we anticipate the following sprints:

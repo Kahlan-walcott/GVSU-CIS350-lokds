@@ -83,4 +83,5 @@ The Anticipated Problems include:
 * Finding free graphics and sound. 
 * Assigning realistic individual tasks based on everyone's technical background.
 
-* Coming to a complete agreement on all aspects of the game's creative vision. 
+* Coming to a complete agreement on all aspects of the game's creative vision.
+* Communicating our individual struggles so we can get help from others.

@@ -21,28 +21,28 @@ Our teams plans on having a lot of changes based on our own abilities and time c
 
 Using a mix of the agile scrum and prototype process models we anticipate the following sprints:
 
-**Sept. 23nd - Oct 6th:**
+**Sept. 29th - Oct. 6th:**
 
 > - Create base code.
 
-**Oct. 7 - Oct 13th:**
+**Oct. 7th - Oct. 13th:**
 
-> - Create the first world using an established json map and unique graphics and sound.
+> - Create the first level using an established json map and unique graphics includiong little artifacts the character(dog) can pick up to "fuel" itself to get through the level.
 
 **Oct. 14th - Oct. 15th:**
-> - Decide on an overall scoring system
+> - Decide on an overall scoring system and have the first level working.
 
 **Oct. 16th - Oct. 23rd:**
-> - Learn how to create different json map templates for other worlds
+> - Learn how to create different json map templates for the second level.
 
-**Oct. 24th - Nov. 8:**
-> - Create the other 4 worlds using unique json maps, graphics, and sound.
+**Oct. 24th - Nov. 8th:**
+> - Create the second level using unique json maps, graphics, and sound.
 
-**Nov. 9 - Nov. 16:**
-> - Code a menu that has an object that can be rolled and have the user ‘fall into’ a world.
+**Nov. 9th - Nov. 16th:**
+> - Code a menu that has an object that can be rolled and have the user ‘fall into’ the next level.
 
-**Nov. 17 - Nov. 22:**
-> - Store the data of the player to mark when they have completed a world. Once they have completed all worlds, they win the game.
+**Nov. 17th - Nov. 22nd:**
+> - Store and update the data of the player as they get through the levels. Once they have finish all the tasks in the second level, they win the game.
 
 **Nov. 22 - Dec. 1:**
 > - Decide on adding additional data storage to create a running scoreboard and or additional functionality. 

@@ -81,4 +81,6 @@ The Anticipated Problems include:
 * Putting descriptive comments above every line so everyone knows what each line is doing. 
 * Learning the required technical skills necessary to implement all desired functionality. 
 * Finding free graphics and sound. 
-* Assigning realistic individual tasks based on everyone's technical background.* Coming to a complete agreement on all aspects of the game's creative vision. 
+* Assigning realistic individual tasks based on everyone's technical background.
+
+* Coming to a complete agreement on all aspects of the game's creative vision. 

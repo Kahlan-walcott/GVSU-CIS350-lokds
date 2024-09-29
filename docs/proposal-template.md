@@ -2,17 +2,20 @@
 
 
 Team members:
-Olivia Foster, Kahlan Walcott, Sanidhya Didagur, Delaney Kelley
+Olivia Foster, Kahlan Walcott, Sanidhya Didagur, Delaney Kelley, Lasya Priya Vemalla
 # Introduction
 
-## Project Concept ( 2 Paragraphs)
+## Project Concept
+In our game, a dead dog is brought back to life and embarks on a journey to reunite with its original owner. The dog must navigate through a mystical forest filled with magical creatures and challenges. Along the way, it will collect various artifacts needed to pass through special gateways guarded by these creatures. Players can help the dog go back and forth in the forest to gather any missed artifacts, making exploration an essential part of the game. These mystical creatures act as gatekeepers, allowing the dog to advance to the real world only after it has fulfilled certain requirements, such as presenting artifacts or answering trivia questions.
+Instead of having separate levels, the game will feature multiple steps or gateways within the same mystical forest. Each gateway will present its own challenges, and the dog must prove itself to gain access to the next part of its journey. The dog’s adventure will include different worlds, such as the Cloud World representing its afterlife and the Underworld, adding depth and variety to the gameplay experience. This setup enhances the emotional connection as players guide the dog through its trials to ultimately find its way back home.
 ## Loosely Defined Features
 ### Essential:
-* point 1
+* Artifact Collection: Players must collect artifacts needed to pass through mystical gateways.
 ### Desirable:
-* point 1
+* Mystical Creatures: Each gateway is guarded by a creature that asks for artifacts or trivia questions to let the dog pass.
 ### Optional:
-* point 1
+* Multiple Worlds: Include various themed areas like the Cloud World (afterlife) and the Underworld, adding more layers to the dog’s journey.
+
 
 # Anticipated Technologies
 

@@ -27,7 +27,7 @@ class Fragment:
 
         return dead
 
-    def translation(self, surface, counteract=(0, 0)):
+    def translate(self, surface, counteract=(0, 0)):
         """Puts a picture on the surface."""
         pict = self.movement.image()
         # x and y

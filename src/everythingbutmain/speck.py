@@ -25,7 +25,7 @@ class Speck:
         self.pace = max(0, self.pace - 0.1)
         return not self.pace
 
-    def translation(self, surface, counteract=(0, 0)):
+    def translate(self, surface, counteract=(0, 0)):
         """allows the spark to happen in all directions"""
         translation_spots = [
             # in front of where the spark is going

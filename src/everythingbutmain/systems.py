@@ -2,8 +2,8 @@ import math
 import random
 
 import pygame
-from everythingbutmain.particles import Fragment
-from everythingbutmain.spark import Speck
+from everythingbutmain.fragments import Fragment
+from everythingbutmain.speck import Speck
 
 
 class PhysMath:

@@ -11,6 +11,7 @@ Discussion points:
  * What the functional and nonfunctional aspects of our project are
  * What points we are going to hit in the first checkpoint
  * When we can meet for a quick meeting about what our plans are for the week
+
 Goals for next week:
 * Olivia is going to learn more about how to create a tile map and create ours
 * Delaney, Sanidnya, and Lasya are going to develop a more thorough story for the game

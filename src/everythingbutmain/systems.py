@@ -116,7 +116,7 @@ class Rival(PhysMath):
             self.stroll = max(0, self.stroll - 1)
 
             if not self.stroll:
-                distance = (self.main.player.position[0] - self.position[0], self.main.player.position[1] - self.position[1])
+                distance = (self.main.character.position[0] - self.position[0], self.main.character.position[1] - self.position[1])
                 if abs(distance[1]) < 16:
                     if self.invert and distance[0] < 0:
                         self.main.sounds['shoot'].play()
@@ -143,7 +143,7 @@ class Rival(PhysMath):
             self.calibrate_activity('idle')
 
         if abs(self.main.character.rushing) >= 50:
-            if self.rectangle().colliderect(self.main.player.rect()):
+            if self.rectangle().colliderect(self.main.character.rect()):
                 self.main.window_sway = max(16, self.main.window_sway)
                 self.main.sounds['hit'].play()
                 """to find out if they collide when player is dashing and adds sparks"""

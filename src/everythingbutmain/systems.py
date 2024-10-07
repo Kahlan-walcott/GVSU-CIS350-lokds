@@ -89,7 +89,7 @@ class PhysMath:
 
     def translate(self, surface, counteract=(0, 0)):
         """handling the flip part (output the appropriate flipped image)"""
-        surface.blit(pygame.transform.flip(self.gestore.img(), self.invert, False), (self.position[0] - counteract[0] + self.movement_counter[0], self.position[1] - counteract[1] + self.movement_counter[1]))
+        surface.blit(pygame.transform.flip(self.gestore.image(), self.invert, False), (self.position[0] - counteract[0] + self.movement_counter[0], self.position[1] - counteract[1] + self.movement_counter[1]))
 
 
 class Rival(PhysMath):
@@ -106,7 +106,7 @@ class Rival(PhysMath):
     def version(self, maps, gestore=(0, 0)):
         """controls walking and solid ground and what they do when not walking"""
         if self.stroll:
-            if maps.solid_check((self.rectangle().centerx + (-7 if self.invert else 7), self.position[1] + 23)):
+            if maps.firm_examine((self.rectangle().centerx + (-7 if self.invert else 7), self.position[1] + 23)):
                 if self.crash['right'] or self.crash['left']:
                     self.invert = not self.invert
                 else:
@@ -120,16 +120,16 @@ class Rival(PhysMath):
                 if abs(distance[1]) < 16:
                     if self.invert and distance[0] < 0:
                         self.main.sounds['shoot'].play()
-                        self.main.missles.append([[self.rectangle().centerx - 7, self.rectangle().centery], -1.5, 0])
+                        self.main.missiles.append([[self.rectangle().centerx - 7, self.rectangle().centery], -1.5, 0])
                         """controls the spark from the gun when looking left"""
                         for i in range(4):
-                            self.main.specks.append(Speck(self.main.missles[-1][0], random.random() - 0.5 + math.pi, 2 + random.random()))
+                            self.main.speck.append(Speck(self.main.missiles[-1][0], random.random() - 0.5 + math.pi, 2 + random.random()))
                     if not self.invert and distance[0] > 0:
                         self.main.sounds['shoot'].play()
-                        self.main.missles.append([[self.rectangle().centerx + 7, self.rectangle().centery], 1.5, 0])
+                        self.main.missiles.append([[self.rectangle().centerx + 7, self.rectangle().centery], 1.5, 0])
                         """spark from the gun when looking right"""
                         for i in range(4):
-                            self.main.specks.append(Speck(self.main.missles[-1][0], random.random() - 0.5, 2 + random.random()))
+                            self.main.speck.append(Speck(self.main.missiles[-1][0], random.random() - 0.5, 2 + random.random()))
 
         elif random.random() < 0.01:
             self.stroll = random.randint(30, 120)
@@ -143,18 +143,18 @@ class Rival(PhysMath):
             self.calibrate_activity('idle')
 
         if abs(self.main.character.rushing) >= 50:
-            if self.rectangle().colliderect(self.main.character.rect()):
+            if self.rectangle().colliderect(self.main.character.rectangle()):
                 self.main.window_sway = max(16, self.main.window_sway)
                 self.main.sounds['hit'].play()
                 """to find out if they collide when player is dashing and adds sparks"""
                 for i in range(30):
                     slant = random.random() * math.pi * 2
                     pace = random.random() * 5
-                    self.main.sparks.append(Speck(self.rectangle().center, slant, 2 + random.random()))
-                    self.main.particles.append(Fragment(self.main, 'particle', self.rectangle().center, quickness=[math.cos(slant + math.pi) * pace * 0.5, math.sin(slant + math.pi) * pace * 0.5], structure=random.randint(0, 7)))
+                    self.main.speck.append(Speck(self.rectangle().center, slant, 2 + random.random()))
+                    self.main.fragments.append(Fragment(self.main, 'particle', self.rectangle().center, quickness=[math.cos(slant + math.pi) * pace * 0.5, math.sin(slant + math.pi) * pace * 0.5], structure=random.randint(0, 7)))
 
-                self.main.sparks.append(Speck(self.rectangle().center, 0, 5 + random.random()))
-                self.main.sparks.append(Speck(self.rectangle().center, math.pi, 5 + random.random()))
+                self.main.speck.append(Speck(self.rectangle().center, 0, 5 + random.random()))
+                self.main.speck.append(Speck(self.rectangle().center, math.pi, 5 + random.random()))
 
                 return True
 
@@ -189,10 +189,10 @@ class Character(PhysMath):
         self.in_air += 1
 
         if self.in_air > 120:
-            if not self.main.dead:
+            if not self.main.deceased:
                 self.main.window_sway = max(16, self.main.window_sway)
 
-            self.main.dead += 1
+            self.main.deceased += 1
 
         if self.crash['down']:
             self.in_air = 0
@@ -277,4 +277,5 @@ class Character(PhysMath):
                 self.rushing = -60
             else:
                 self.rushing = 60
+
 

@@ -1,7 +1,5 @@
 
-# Meeting Minute
-
-## Meeting minutes template
+## Meeting minutes 
 
 Team name: lokds
 

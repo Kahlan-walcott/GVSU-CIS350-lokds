@@ -134,7 +134,7 @@ class Main:
                 if self.deceased > 40:
                     self.putin_step(self.step)
 
-            # x axis
+     # x axis
             self.scrawl[0] += (self.character.rectangle().centerx - self.show.get_width() / 2 - self.scrawl[0]) / 30
             # y axis
             self.scrawl[1] += (self.character.rectangle().centery - self.show.get_height() / 2 - self.scrawl[1]) / 30
@@ -208,8 +208,8 @@ class Main:
             for fragment in self.fragments.copy():
                 dead = fragment.version()
                 fragment.translate(self.show, counteract=transition_scrawl)
-                if fragment.type == 'leaf':
-                    fragment.pos[0] += math.sin(fragment.animation.frame * 0.035) * 0.3
+                if fragment.variety == 'leaf':
+                    fragment.position[0] += math.sin(fragment.movement.structure * 0.035) * 0.3
                 if dead:
                     self.fragments.remove(fragment)
 
@@ -249,4 +249,5 @@ class Main:
 
 
 Main().sprint()
+
 

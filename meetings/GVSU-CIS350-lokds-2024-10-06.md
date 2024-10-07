@@ -1,7 +1,7 @@
 # Meeting Minutes
 Team name: lokds
 
-Members present: Olivia, Kahaln, Delaney, Sanidnya, Lasya
+Members present: Olivia, Kahaln, Delaney, Sanidhya, Lasya
 
 Date: 09/30
 
@@ -14,5 +14,5 @@ Discussion points:
 
 Goals for next week:
 * Olivia is going to learn more about how to create a tile map and create ours
-* Delaney, Sanidnya, and Lasya are going to develop a more thorough story for the game
+* Delaney, Sanidhya, and Lasya are going to develop a more thorough story for the game
 * Kahlan is going to upload a rough outline of the game to the GitHub along with any other Python files that the game will draw from

@@ -7,13 +7,15 @@ Members present: Olivia, Kahlan, Delaney, Sanidhya, Lasya
 
 Date: 10/07
 
-Time: 9:30 - 10:00am
+Time: 6:00 - 6:30 pm
 
 Discussion points: 
 
 * Reviewed previous sprint and shared individual progress.
 * Shared demos of progress made for group feedback.
 * Allocated tasks for the next sprint.
+* Discussed actors in use-case diagram.
+* Discussed different roles other than Scrum leader for Agile.
 
 Goals for next week (include responsibilities)
 

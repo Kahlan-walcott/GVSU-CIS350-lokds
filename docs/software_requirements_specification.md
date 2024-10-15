@@ -13,6 +13,7 @@ This document specifies the functions that our game will need to work, which is 
    2. The user shall be able to quit the game whenever they want to.
 4. Picking up objects in the game.
    1. The game shall present interactive objects, such as food and obstacles, that the player can collect or avoid to influence the dog's journey.
+   2. The game shall have collectible artifacts spread throughout the world.
 
 # Non-Functional Requirements
 1. Playing music and sound effects thought out the game.
@@ -21,11 +22,14 @@ This document specifies the functions that our game will need to work, which is 
 2. The game needs to be easily understandable for the user.
    1. The game’s user interface shall be intuitive and simple, allowing new players to understand controls and objectives within the first five minutes of gameplay.
    2. The game shall be easily playable to non-technical people. That is to say, users should not have to download additional software or go through various confusing steps to play the game on their PC.
-3. The user could customize the dog.
+3. The user can customize the dog.
    1. The user shall be able to customize the characters (Eg: changing color, outfits, etc.)
 4. Make the visuals appealing.
    1. The GUI shall be visually appealing with no lags in gameplay. 
 5. The storyline needs to be engaging.
    1. The game shall have an engaging storyline and built-in tasks that motivate and excite users to play. 
-6. Smoothly transition between different worlds.
+6. The game needs to run smoothly.
    1. The user shall be able to smoothly transition to a different level once they have completed the level they were on.
+   2. The game should run smoothly without lagging.
+7. The game needs to load fast.
+   1. The game shall load in under 10 seconds to provide quick access to the game or levels.

@@ -1,5 +1,5 @@
 # Overview
-This document specifies the functions that our game will need to work. It also describes the functions we would like to add to improve the user’s experience.
+This document specifies the functions that our game will need to work, which is the functional requierments. It also describes the functions we would like to add to improve the user’s experience, which is the non-functional requierments.
 
 # Functional Requirements
 1. Moving the character around with the arrow keys.

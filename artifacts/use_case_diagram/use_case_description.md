@@ -10,6 +10,7 @@
 3. The dog moves across the map in the direction of the key the player pressed down.
 
 **Cross Ref:** 
+
 Function 1. Moving the character around with the arrow keys, requirements;
 * R1. The game shall allow the player to move as the dog.
 * R2. The player shall be able to move across the map.

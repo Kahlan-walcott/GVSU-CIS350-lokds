@@ -18,6 +18,11 @@ This document specifies the functinal requierments for our game, which are the f
    3. R3: An item shall be stored for use later when a player uses the pickup key on that item.
 5. The user can talk with NPCs
    1. R1: Text box dialog shall be displayed when the player interacts with a npc.
+6. The character needs to move.
+   1. R1: The game shall allow the character to walk or run left or right.
+   2. R2: The game shall allow the character to jump when the user pushes the up key.
+7. Keeping the items the character picks up.
+   1. R1: The game shall allow the picked up items to be stored.
 
 # Non-Functional Requirements
 1. Playing music and sound effects thought out the game.

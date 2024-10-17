@@ -25,6 +25,7 @@ The purpose of this document is to present the framework behind the development 
    1. R1: The game shall allow the picked up items to be stored.
 8. The map needs to consist of tiles
    1. R1: The game shall load in pixel tiles that look like stones or water.
+   2. R2: The tiles shall match the "place" that the character is at.
 9. The character needs to be animated.
    1. R1: The character shall change based on the movements.
 
@@ -51,5 +52,6 @@ The purpose of this document is to present the framework behind the development 
    1. R1: The game shall be able to load on any type of screen.
 9. The game needs multiple moving objects
    1. R1: The game shall be able to have multiple moving objects on screen at the same time.
+   2. R2: The game shall have leaves that are falling from trees.
 10. The NPCs can give and take objects.
 	1. R1: The character shall be able to give and receive objects from the NPC.

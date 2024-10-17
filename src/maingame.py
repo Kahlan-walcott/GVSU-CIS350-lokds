@@ -21,7 +21,6 @@ def load_pictures(file):
     return pictures
 
 ADJACENT_OFFSETS = [(-1, 0), (-1, -1), (0, -1), (1, -1), (1, 0), (0, 0), (-1, 1), (0, 1), (1, 1)]
-
 PHYSICS_TILES = {'grass', 'stone'}
 
 class Adventure:
@@ -45,8 +44,7 @@ class Adventure:
             'background': load_picture('background.jpg'),
             'water': load_pictures('tiles/water'),
             'player/thing': AnimationSequence(load_pictures('entities/player/thing')),
-            'player/run': AnimationSequence(load_pictures('entities/player/run'), 4),
-            'player/jump': AnimationSequence(load_pictures('entities/player/jump'))
+            'player/run': AnimationSequence(load_pictures('entities/player/run'), 4)
         }
         self.load_game('map.json')
         self.scroll_offset = [0, 0]

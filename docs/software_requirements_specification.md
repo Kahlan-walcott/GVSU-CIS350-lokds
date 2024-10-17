@@ -23,6 +23,10 @@ This document specifies the functinal requierments for our game, which are the f
    2. R2: The game shall allow the character to jump when the user pushes the up key.
 7. Keeping the items the character picks up.
    1. R1: The game shall allow the picked up items to be stored.
+8. The map needs to consist of tiles
+   1. R1: The game shall load in pixel tiles that look like stones or water.
+9. The character needs to be animated.
+   1. R1: The character shall change based on the movements.
 
 # Non-Functional Requirements
 1. Playing music and sound effects thought out the game.
@@ -47,3 +51,5 @@ This document specifies the functinal requierments for our game, which are the f
    1. R1: The game shall be able to load on any type of screen.
 9. The game needs multiple moving objects
    1. R1: The game shall be able to have multiple moving objects on screen at the same time.
+10. The NPCs can give and take objects.
+   1. R1: The character shall be able to give and receive objects from the NPC.

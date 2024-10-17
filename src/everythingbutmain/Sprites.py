@@ -10,7 +10,7 @@ class Avatar:
         self.collisions = {'up': False, 'down': False, 'right': False, 'left': False}
         self.gesture = 'thing'
         self.sprite = self.maingame.resources[self.avatar_type + '/' + self.gesture]
-        self.distance = (-3, -3)
+        self.distance = (-2, -2)
         self.rotate = False
         self.airBourne = 0
 

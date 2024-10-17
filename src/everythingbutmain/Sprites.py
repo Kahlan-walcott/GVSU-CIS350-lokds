@@ -1,4 +1,5 @@
 import pygame
+from FunkyFeatures import Artifacts, NPCs
 
 class Avatar:
     def __init__(self, maingame, avatar_type, position, size):

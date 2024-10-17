@@ -1,7 +1,4 @@
 import pygame
-import os
-
-BASE_IMG_PATH = 'data/images/'
 
 class Avatar:
     def __init__(self, maingame, avatar_type, position, size):
@@ -11,10 +8,10 @@ class Avatar:
         self.size = size
         self.avatar_velocity = [0, 0]
         self.collisions = {'up': False, 'down': False, 'right': False, 'left': False}
-        self.gesture = ''
+        self.gesture = 'thing'
+        self.sprite = self.maingame.resources[self.avatar_type + '/' + self.gesture]
         self.distance = (-3, -3)
         self.rotate = False
-        self.set_gesture('thing')
         self.airBourne = 0
 
     def rect(self):
@@ -23,11 +20,12 @@ class Avatar:
     def set_gesture(self, gesture):
         if gesture != self.gesture:
             self.gesture = gesture
-            self.animation = self.maingame.resources[self.avatar_type + '/' + self.gesture].duplicate()
+            self.sprite = self.maingame.resources[self.avatar_type + '/' + self.gesture].duplicate()
 
     def update_avatar(self, tilemap, movement=(0, 0)):
         self.collisions = {'up': False, 'down': False, 'right': False, 'left': False}
         frame_movement = (movement[0] + self.avatar_velocity[0], movement[1] + self.avatar_velocity[1])
+
         self.position[0] += frame_movement[0]
         entity_rect = self.rect()
         for rect in self.maingame.physics_rectangles(self.position):
@@ -56,8 +54,8 @@ class Avatar:
             self.rotate = False
         if movement[0] < 0:
             self.rotate = True
-        else:
-            self.avatar_velocity[1] = min(4, self.avatar_velocity[1] + 0.1)
+
+        self.avatar_velocity[1] = min(4, self.avatar_velocity[1] + 0.1)
 
         if self.collisions['down'] or self.collisions['up']:
             self.avatar_velocity[1] = 0
@@ -72,10 +70,10 @@ class Avatar:
         else:
             self.set_gesture('thing')
 
-        self.animation.advance()
+        self.sprite.advance()
 
     def render(self, surf, offset=(0, 0)):
-        surf.blit(pygame.transform.flip(self.animation.current_image(), self.rotate, False),
+        surf.blit(pygame.transform.flip(self.sprite.current_image(), self.rotate, False),
                   (self.position[0] - offset[0] + self.distance[0], self.position[1] - offset[1] + self.distance[1]))
 
 class AnimationSequence:
@@ -99,6 +97,14 @@ class AnimationSequence:
 
     def current_image(self):
         return self.frames[int(self.current_frame_index / self.duration_per_frame)]
+
+
+
+
+
+
+
+
 
 
 

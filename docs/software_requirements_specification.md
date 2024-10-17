@@ -52,4 +52,4 @@ This document specifies the functinal requierments for our game, which are the f
 9. The game needs multiple moving objects
    1. R1: The game shall be able to have multiple moving objects on screen at the same time.
 10. The NPCs can give and take objects.
-   1. R1: The character shall be able to give and receive objects from the NPC.
+	1. R1: The character shall be able to give and receive objects from the NPC.

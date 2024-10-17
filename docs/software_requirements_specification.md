@@ -1,5 +1,5 @@
 # Overview
-The purpose of this document is to present the framework behind the development of 'A Dog's Journey Home'. This framework will be constructed through specified functional and requirements for our game, which are the functions our game needs to work. It also describes the non-functional requierments, which are the functions we would like to add to improve the user’s experience.
+The purpose of this document is to present the framework behind the development of 'A Dog's Journey Home'. This framework will be constructed through specified functional requirements for our game, which are the functions our game needs to work. It also describes the non-functional requierments, which are the functions we would like to add to improve the user’s experience.
 
 # Functional Requirements
 1. Moving the character around with the arrow keys.

@@ -17,4 +17,4 @@ Goal for next week:
 * Kahlan will create a document with all the functional and non-functional requirements
 * Delaney will make and describe a use-case diagram
 * Olivia will create a demo video of the game so far for the presentation
-* Sanidhya will create a timeline for the presentation
+* Sanidhya and Lasya will create a timeline for the presentation

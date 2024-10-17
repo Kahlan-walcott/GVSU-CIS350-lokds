@@ -1,4 +1,5 @@
 from Sprites import Avatar, AnimationSequence
+from FunkyFeatures import Artifacts, NPCs
 import sys
 import json
 import pygame

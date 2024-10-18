@@ -13,7 +13,7 @@ The purpose of this document is to establish the framework behind the developmen
    1. R1: The GUI shall display a congratulations message when the user completes the final objective of the game and reaches the allotted dog’s home location.
    2. R2: The user shall be able to quit the game whenever they want to.
 4. Picking up objects in the game.
-   1. R1: The game shall present interactive objects, such as food and obstacles, that the player can collect or avoid to influence the dog's journey.
+   1. R1: The game shall present interactive objects, such as food and artifacts, that the player can collect that will influence the dog's journey back home.
    2. R2: The game shall have collectible artifacts spread throughout the world.
    3. R3: An item shall be stored for use later when a player uses the pickup key on that item.
 5. The user can talk with NPCs
@@ -28,6 +28,11 @@ The purpose of this document is to establish the framework behind the developmen
    2. R2: The tiles shall match the "place" that the character is at.
 9. The character needs to be animated.
    1. R1: The character shall change based on the movements.
+10. Giving collected artifacts
+	1. R1: The character shall be able to give the stored items/artifacts to the NPCs if asked to pass through the "gate".
+11. The character will move to the next level(one step close to home)
+	1. R1: The character shall be allowed to "fall into" the next level as it gives the artifact asked by the NPC.
+   
 
 # Non-Functional Requirements
 1. Playing music and sound effects throughout the game.
@@ -50,4 +55,5 @@ The purpose of this document is to establish the framework behind the developmen
    1. R1: The game shall be able to have multiple moving objects on screen at the same time.
 8. The NPCs can give and take objects.
 	1. R1: The character shall be able to give and receive objects from the NPC.
-
+9. Character visual appearance.
+	1. R1: The character shall get bigger as it picks up food along the journey.

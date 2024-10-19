@@ -25,6 +25,24 @@ class Artifacts:
         for variantName, imageAndPosition in self.not_picked_up.items():
             surface.blit(imageAndPosition[0], (imageAndPosition[1][0] - offset[0] + self.distance[0], imageAndPosition[1][1] - offset[1] + self.distance[1]))
 
+    def check_collision_with_artifacts(self, player_rect):
+        to_remove = []
+
+        for variantName, imageAndPosition in self.not_picked_up.items():
+            artifact_position = (imageAndPosition[1][0] + self.distance[0],
+                                 imageAndPosition[1][1] + self.distance[1])
+
+            artifact_rect = pygame.Rect(artifact_position[0], artifact_position[1],
+                                        imageAndPosition[0].get_width(),
+                                        imageAndPosition[0].get_height())
+
+            if player_rect.colliderect(artifact_rect):
+                to_remove.append(variantName)
+
+        for item in to_remove:
+            del self.not_picked_up[item]
+            print('deleted')
+
 
 
 

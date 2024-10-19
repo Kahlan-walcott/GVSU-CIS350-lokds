@@ -113,6 +113,8 @@ class Adventure:
             self.avatar.update_avatar(self.tile_layout, (self.movement_status[1] - self.movement_status[0], 0))
             self.avatar.render(self.render_surface, offset=render_scroll)
             self.artifacts.drawArtifacts(self.render_surface, offset=render_scroll)
+
+            self.artifacts.check_collision_with_artifacts( self.avatar.rect())
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     pygame.quit()
@@ -135,3 +137,4 @@ class Adventure:
             self.timer.tick(60)
 
 Adventure().run()
+

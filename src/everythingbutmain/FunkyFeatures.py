@@ -20,10 +20,12 @@ class Artifacts:
         self.distance = (-2, -2)
 
 
-    def drawArtifacts(self, surface, offset=(0, 0)):
+    def drawArtifacts(self, surface, distanceFromCamera=(0, 0)):
 
         for variantName, imageAndPosition in self.not_picked_up.items():
-            surface.blit(imageAndPosition[0], (imageAndPosition[1][0] - offset[0] + self.distance[0], imageAndPosition[1][1] - offset[1] + self.distance[1]))
+
+            surface.blit(imageAndPosition[0], (imageAndPosition[1][0] - distanceFromCamera[0],
+                                               imageAndPosition[1][1] - distanceFromCamera[1]))
 
     def check_collision_with_artifacts(self, player_rect):
         to_remove = []

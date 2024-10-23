@@ -6,7 +6,7 @@ import pygame
 import os
 
 
-BASE_IMAGE_DIR = 'data/images/'
+BASE_IMAGE_DIR = 'artifacts/images/'
 
 def load_picture(file):
     picture = pygame.image.load(BASE_IMAGE_DIR + file).convert()

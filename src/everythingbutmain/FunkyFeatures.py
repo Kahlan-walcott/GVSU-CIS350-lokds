@@ -55,6 +55,20 @@ class Artifacts:
 class NPCs:
     def __init__(self, maingame, avatar):
         self.maingame = maingame
-        self.avatar = avatar
+        self.avatar =  maingame.resources[avatar]
+        self.position = [419, 86.1]
+        self.distance = (-2, -2)
 
-        pass
+
+
+    def drawNPC(self, surface, distanceFromCamera=(0, 0)):
+        surface.blit(self.avatar[0], (self.position[0] - distanceFromCamera[0],self.position[1] - distanceFromCamera[1]))
+
+    def check_collision_with_NPC(self, player_rect):
+
+
+        NPC_position = (self.position[0] + self.distance[0], self.position[1] + self.distance[1])
+        NPC_rect = pygame.Rect(NPC_position[0], NPC_position[1], self.avatar[0].get_width(), self.avatar[0].get_height())
+
+        if player_rect.colliderect(NPC_rect):
+            print('Collide')

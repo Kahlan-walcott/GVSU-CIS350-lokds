@@ -47,12 +47,14 @@ class Adventure:
             'water': load_pictures('tiles/water'),
             'artifacts': load_pictures('artifacts'),
             'player/thing': AnimationSequence(load_pictures('entities/player/thing')),
-            'player/run': AnimationSequence(load_pictures('entities/player/run'), 4)
+            'player/run': AnimationSequence(load_pictures('entities/player/run'), 4),
+            'NPC/tomato' : load_pictures('entities/NPC/tomato')
         }
         self.load_game('map.json')
         self.scroll_offset = [0, 0]
         self.avatar = Avatar(self, 'player', (0, 0), (10, 10))
         self.artifacts = Artifacts(self)
+        self.tomato = NPCs(self, 'NPC/tomato')
         self.current_animation = self.resources['player/thing'].duplicate()
         self.current_action = 'thing'
 
@@ -103,17 +105,19 @@ class Adventure:
         while True:
             self.render_surface.blit(self.resources['background'], (0, 0))
             # self.render_surface.blit(self.resources['artifacts'][0], (300,110))
-
+            print(self.avatar.position[0], self.avatar.position[1])
             if self.avatar.position[1] >= 700:
                 Adventure().run()
             self.scroll_offset[0] += (self.avatar.rect().centerx - self.render_surface.get_width() / 2 - self.scroll_offset[0]) / 30
             self.scroll_offset[1] += (self.avatar.rect().centery - self.render_surface.get_height() / 2 - self.scroll_offset[1]) / 30
             render_scroll = (int(self.scroll_offset[0]), int(self.scroll_offset[1]))
+            self.tomato.drawNPC(self.render_surface, distanceFromCamera=render_scroll)
             self.render(self.render_surface, offset=render_scroll)
             self.avatar.update_avatar(self.tile_layout, (self.movement_status[1] - self.movement_status[0], 0))
             self.avatar.render(self.render_surface, offset=render_scroll)
+          
             self.artifacts.drawArtifacts(self.render_surface, distanceFromCamera=render_scroll)
-
+            self.tomato.check_collision_with_NPC(self.avatar.rect())
             self.artifacts.check_collision_with_artifacts( self.avatar.rect())
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
@@ -137,4 +141,5 @@ class Adventure:
             self.timer.tick(60)
 
 Adventure().run()
+
 

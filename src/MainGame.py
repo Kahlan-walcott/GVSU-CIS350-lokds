@@ -1,5 +1,5 @@
 from Sprites import Avatar, AnimationSequence
-from FunkyFeatures import Artifacts, NPCs
+from FunkyFeatures import Artifacts, NPCs, NPCMessage
 import sys
 import json
 import pygame
@@ -57,6 +57,7 @@ class Adventure:
         self.tomato = NPCs(self, 'NPC/tomato')
         self.current_animation = self.resources['player/thing'].duplicate()
         self.current_action = 'thing'
+        self.message = NPCMessage(self,419, 20, False)
 
     def surrounding_tiles(self, position):
         tiles = []
@@ -117,7 +118,10 @@ class Adventure:
             self.avatar.render(self.render_surface, offset=render_scroll)
           
             self.artifacts.drawArtifacts(self.render_surface, distanceFromCamera=render_scroll)
-            self.tomato.check_collision_with_NPC(self.avatar.rect())
+            if self.tomato.check_collision_with_NPC(self.avatar.rect(), self.render_surface, distanceFromCamera=render_scroll):
+
+                self.message.drawMessage(self.render_surface, distanceFromCamera=render_scroll)
+            pygame.display.update()
             self.artifacts.check_collision_with_artifacts( self.avatar.rect())
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:

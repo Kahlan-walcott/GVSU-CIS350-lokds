@@ -129,7 +129,7 @@
 * 2 days
 * Everyone
 
-11. Add the pdf of the group work to the GitHub 
+10. Add the pdf of the group work to the GitHub 
 * Above. 
 * 1 day 
 * Lasya Priya Vemalla

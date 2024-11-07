@@ -8,7 +8,7 @@
 2. Finish game story Details
 * Create a story for the game and a purpose for the player.
 * One week
-* Lasya Priya Vemalla
+* Lasya Priya Vemalla and Sanidhya Didagur
 
 3. Outline Learning Resources
 * Upload resources to begin learning on GitHub.
@@ -107,7 +107,7 @@
 5. Find and organize background music and sound effects
 * Finding good music for the game.
 * One week
-* Sanidhya 
+* Sanidhya Didagur
 
 6. Update the Gantt chart for homework 4
 * Updating the Gantt Chart by adding the ongoing tasks and color coding it.

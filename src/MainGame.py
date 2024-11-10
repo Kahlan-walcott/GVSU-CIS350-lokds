@@ -1,5 +1,6 @@
 from Sprites import Avatar, AnimationSequence
 from FunkyFeatures import Artifacts, NPCs, NPCMessage
+from AdvancedMovement import Ghosts
 import sys
 import json
 import pygame
@@ -58,7 +59,7 @@ class Adventure:
         self.current_animation = self.resources['player/thing'].duplicate()
         self.current_action = 'thing'
         self.message = NPCMessage(self,419, 20, False)
-
+        self.ghosts = Ghosts(self)
     def surrounding_tiles(self, position):
         tiles = []
         tile_position = (int(position[0] // self.tile_dimension), int(position[1] // self.tile_dimension))
@@ -107,7 +108,7 @@ class Adventure:
             self.render_surface.blit(self.resources['background'], (0, 0))
             # self.render_surface.blit(self.resources['artifacts'][0], (300,110))
             print(self.avatar.position[0], self.avatar.position[1])
-            if self.avatar.position[1] >= 700:
+            if self.avatar.position[1] >= 500:
                 Adventure().run()
             self.scroll_offset[0] += (self.avatar.rect().centerx - self.render_surface.get_width() / 2 - self.scroll_offset[0]) / 30
             self.scroll_offset[1] += (self.avatar.rect().centery - self.render_surface.get_height() / 2 - self.scroll_offset[1]) / 30
@@ -123,6 +124,8 @@ class Adventure:
                 self.message.drawMessage(self.render_surface, distanceFromCamera=render_scroll)
             pygame.display.update()
             self.artifacts.check_collision_with_artifacts( self.avatar.rect())
+            self.ghosts.draw_ghosts(self.render_surface,distanceFromCamera=render_scroll)
+            #self.ghosts.check_collision_with_ghosts(self.avatar.rect())
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     pygame.quit()

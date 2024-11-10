@@ -6,6 +6,7 @@
 * Stone (large-decor/0.png) from Devant Art - Artist: SirFluffyCat
 * Crate (decor/2.png) from Devant Art - Artist: SilverVoidArt
 * Twin flowers (decor/3.png) from Devant Art - Artist: Neoriceisgood
+* Leaf (float/0.png) from Devant Art - Artist: Yorialu
 
 ## Platformer Learning Material 
 * Pygame Tutorial - Making a Platformer ep. 2: Images, Input, and Collisions, Link: https://www.youtube.com/watch?v=Qdeb1iinNtk, Accessed: Sept. 6, 2024

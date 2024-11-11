@@ -6,13 +6,14 @@ import json
 import pygame
 import os
 
-
 BASE_IMAGE_DIR = 'artifacts/images/'
+
 
 def load_picture(file):
     picture = pygame.image.load(BASE_IMAGE_DIR + file).convert()
     picture.set_colorkey((0, 0, 0))
     return picture
+
 
 def load_pictures(file):
     pictures = []
@@ -23,8 +24,10 @@ def load_pictures(file):
         print(f"File exists: {BASE_IMAGE_DIR + file}")
     return pictures
 
+
 ADJACENT_OFFSETS = [(-1, 0), (-1, -1), (0, -1), (1, -1), (1, 0), (0, 0), (-1, 1), (0, 1), (1, 1)]
 PHYSICS_TILES = {'grass', 'stone'}
+
 
 class Adventure:
     def __init__(self):
@@ -49,19 +52,26 @@ class Adventure:
             'artifacts': load_pictures('artifacts'),
             'player/thing': AnimationSequence(load_pictures('entities/player/thing')),
             'player/run': AnimationSequence(load_pictures('entities/player/run'), 4),
-            'NPC/tomato' : load_pictures('entities/NPC/tomato'),
-            'float': load_pictures('float')
+            'NPC/tomato': load_pictures('entities/NPC/tomato'),
+            'float': load_pictures('float'),
+            'ghost/down' : AnimationSequence(load_pictures('entities/ghost/down'), 0.5),
+            'ghost/up': AnimationSequence(load_pictures('entities/ghost/up'), 0.5),
+            'ghost/left': AnimationSequence(load_pictures('entities/ghost/left'), 0.5),
+            'ghost/right': AnimationSequence(load_pictures('entities/ghost/right'),0.5)
+
+
         }
         self.load_game('map.json')
         self.scroll_offset = [0, 0]
-        self.avatar = Avatar(self, 'player', (0, 0), (10, 10))
+        self.avatar = Avatar(self, 'player', (0, 0), (10, 10), 'thing')
         self.artifacts = Artifacts(self)
         self.tomato = NPCs(self, 'NPC/tomato')
         self.current_animation = self.resources['player/thing'].duplicate()
         self.current_action = 'thing'
-        self.message = NPCMessage(self,419, 20, False)
+        self.message = NPCMessage(self, 419, 20, False)
         self.ghosts = Ghosts(self)
         self.obstacle = ObstacleFloat(self, 'float')
+
     def surrounding_tiles(self, position):
         tiles = []
         tile_position = (int(position[0] // self.tile_dimension), int(position[1] // self.tile_dimension))
@@ -73,7 +83,8 @@ class Adventure:
 
     def save_game(self, file):
         f = open(file, 'w')
-        json.dump({'tile_layout': self.tile_layout, 'tile_dimension': self.tile_dimension, 'exterior_tiles': self.exterior_tiles}, f)
+        json.dump({'tile_layout': self.tile_layout, 'tile_dimension': self.tile_dimension,
+                   'exterior_tiles': self.exterior_tiles}, f)
         f.close()
 
     def load_game(self, file):
@@ -89,7 +100,8 @@ class Adventure:
         for tile in self.surrounding_tiles(position):
             if tile['type'] in PHYSICS_TILES:
                 rectangles.append(
-                    pygame.Rect(tile['pos'][0] * self.tile_dimension, tile['pos'][1] * self.tile_dimension, self.tile_dimension, self.tile_dimension)
+                    pygame.Rect(tile['pos'][0] * self.tile_dimension, tile['pos'][1] * self.tile_dimension,
+                                self.tile_dimension, self.tile_dimension)
                 )
         return rectangles
 
@@ -98,12 +110,14 @@ class Adventure:
             surface.blit(self.resources[tile['type']][tile['variant']],
                          (tile['pos'][0] - offset[0], tile['pos'][1] - offset[1]))
         for x in range(offset[0] // self.tile_dimension, (offset[0] + surface.get_width()) // self.tile_dimension + 1):
-            for y in range(offset[1] // self.tile_dimension, (offset[1] + surface.get_height()) // self.tile_dimension + 1):
+            for y in range(offset[1] // self.tile_dimension,
+                           (offset[1] + surface.get_height()) // self.tile_dimension + 1):
                 location = str(x) + ';' + str(y)
                 if location in self.tile_layout:
                     tile = self.tile_layout[location]
                     surface.blit(self.resources[tile['type']][tile['variant']],
-                                 (tile['pos'][0] * self.tile_dimension - offset[0], tile['pos'][1] * self.tile_dimension - offset[1]))
+                                 (tile['pos'][0] * self.tile_dimension - offset[0],
+                                  tile['pos'][1] * self.tile_dimension - offset[1]))
 
     def run(self):
         while True:
@@ -112,23 +126,28 @@ class Adventure:
             print(self.avatar.position[0], self.avatar.position[1])
             if self.avatar.position[1] >= 500:
                 Adventure().run()
-            self.scroll_offset[0] += (self.avatar.rect().centerx - self.render_surface.get_width() / 2 - self.scroll_offset[0]) / 30
-            self.scroll_offset[1] += (self.avatar.rect().centery - self.render_surface.get_height() / 2 - self.scroll_offset[1]) / 30
+            self.scroll_offset[0] += (self.avatar.rect().centerx - self.render_surface.get_width() / 2 -
+                                      self.scroll_offset[0]) / 30
+            self.scroll_offset[1] += (self.avatar.rect().centery - self.render_surface.get_height() / 2 -
+                                      self.scroll_offset[1]) / 30
             render_scroll = (int(self.scroll_offset[0]), int(self.scroll_offset[1]))
             self.obstacle.drawObstacle(self.render_surface, distanceFromCamera=render_scroll)
             self.tomato.drawNPC(self.render_surface, distanceFromCamera=render_scroll)
             self.render(self.render_surface, offset=render_scroll)
             self.avatar.update_avatar(self.tile_layout, (self.movement_status[1] - self.movement_status[0], 0))
             self.avatar.render(self.render_surface, offset=render_scroll)
-          
-            self.artifacts.drawArtifacts(self.render_surface, distanceFromCamera=render_scroll)
-            if self.tomato.check_collision_with_NPC(self.avatar.rect(), self.render_surface, distanceFromCamera=render_scroll):
 
+            self.artifacts.drawArtifacts(self.render_surface, distanceFromCamera=render_scroll)
+            if self.tomato.check_collision_with_NPC(self.avatar.rect(), self.render_surface,
+                                                    distanceFromCamera=render_scroll):
                 self.message.drawMessage(self.render_surface, distanceFromCamera=render_scroll)
             pygame.display.update()
-            self.artifacts.check_collision_with_artifacts( self.avatar.rect())
-            self.ghosts.draw_ghosts(self.render_surface,distanceFromCamera=render_scroll)
-            #self.ghosts.check_collision_with_ghosts(self.avatar.rect())
+            self.artifacts.check_collision_with_artifacts(self.avatar.rect())
+            self.ghosts.draw_ghosts(self.render_surface, distanceFromCamera=render_scroll)
+            self.ghosts.check_collision_with_ghosts(self.avatar.rect())
+            if self.ghosts.check_collision_with_ghosts(self.avatar.rect()):
+                Adventure().run()
+
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     pygame.quit()
@@ -149,6 +168,7 @@ class Adventure:
             pygame.display.update()
 
             self.timer.tick(60)
+
 
 Adventure().run()
 

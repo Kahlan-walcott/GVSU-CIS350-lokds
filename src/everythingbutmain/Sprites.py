@@ -2,7 +2,7 @@ import pygame
 from everythingbutmain.FunkyFeatures import Artifacts, NPCs
 
 class Avatar:
-    def __init__(self, maingame, avatar_type, position, size):
+	def __init__(self, maingame, avatar_type, position, size, jump_sound, fall_sound, solid_tiles):
         self.maingame = maingame
         self.avatar_type = avatar_type
         self.position = list(position)
@@ -14,6 +14,12 @@ class Avatar:
         self.distance = (-2, -2)
         self.rotate = False
         self.airBourne = 0
+		self.solid_tiles = solid_tiles
+        self.was_on_solid_tile = True  # Initialize to True assuming the character starts on solid ground
+        self.was_on_ground = True  # Track if avatar was previously on ground
+        self.jump_sound = jump_sound # Store the jump sound
+        self.fall_sound = fall_sound
+        self.was_falling = False
 
     def rect(self):
         return pygame.Rect(self.position[0], self.position[1], self.size[0], self.size[1])
@@ -63,6 +69,32 @@ class Avatar:
         self.airBourne += 1
         if self.collisions['down']:
             self.airBourne = 0
+
+		# Check if avatar is jumping and not already airborne
+        if self.avatar_velocity[1] < 0 and self.was_on_ground:
+            self.jump_sound.play()  # Play the jump sound
+            self.was_on_ground = False
+
+        # If avatar is on the ground, reset jumping state
+        if self.collisions['down']:
+            self.was_on_ground = True
+
+        # Check if the tile under the avatar is solid
+        tile_below = self.get_tile_below(tilemap)
+        is_on_solid_tile = tile_below and tile_below['type'] in self.solid_tiles
+
+        # Play falling sound only when avatar transitions from solid to non-solid and is falling down
+        if not is_on_solid_tile and self.was_on_solid_tile and self.avatar_velocity[1] > 0:
+            self.fall_sound.play()
+            self.was_falling = True  # Track that the avatar has started falling onto a non-solid tile
+
+        # If avatar has hit the ground or landed on a solid tile, stop falling
+        if self.collisions['down']:
+            self.was_falling = False
+
+        # Update the previous state for the next frame
+        self.was_on_solid_tile = is_on_solid_tile
+
 
         if self.airBourne > 4:
             self.set_gesture('thing')

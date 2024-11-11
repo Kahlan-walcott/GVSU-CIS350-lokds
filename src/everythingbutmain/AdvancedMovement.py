@@ -6,79 +6,80 @@ BLACK = (0, 0, 0)
 BALL_COLOR_1 = (255, 0, 0)
 BALL_COLOR_2 = (0, 0, 255)
 
+
 class Ghosts:
     def __init__(self, game):
         self.game = game
-        self.ball_radius = 8
+        self.ghost1 = Avatar(self.game, 'ghost', (100, 100), (16, 16), 'left')
+        self.ghost2 = Avatar(self.game, 'ghost', (200, 150), (16, 16), 'left')
 
-        # Ball 1 properties
-        self.ball1_x = 100
-        self.ball1_y = 100
-        self.ball1_velocity_x = 4
-        self.ball1_velocity_y = 3
+        # Ghost 1 properties
+        self.ghost1_x = 100
+        self.ghost1_y = 100
+        self.ghost1_velocity_x = 4
+        self.ghost1_velocity_y = 3
 
-        # Ball 2 properties
-        self.ball2_x = 200
-        self.ball2_y = 150
-        self.ball2_velocity_x = 3
-        self.ball2_velocity_y = 4
+        # Ghost 2 properties
+        self.ghost2_x = 200
+        self.ghost2_y = 150
+        self.ghost2_velocity_x = 3
+        self.ghost2_velocity_y = 4
 
-        # Define grid boundaries (smaller than screen dimensions of 320x240)
-        self.grid_min_x = 20
-        self.grid_max_x = 300
-        self.grid_min_y = 20
-        self.grid_max_y = 220
+        # Define grid boundaries
+        self.grid_min_x = 0
+        self.grid_max_x = 320
+        self.grid_min_y = 0
+        self.grid_max_y = 240
 
     def draw_ghosts(self, screen, distanceFromCamera=(0, 0)):
-        # Move Ball 1
-        self.ball1_x += self.ball1_velocity_x
-        self.ball1_y += self.ball1_velocity_y
+        # Move Ghost 1
+        self.ghost1_x += self.ghost1_velocity_x
+        self.ghost1_y += self.ghost1_velocity_y
 
-        # Check collision for Ball 1
-        if self.ball1_x - self.ball_radius <= self.grid_min_x or self.ball1_x + self.ball_radius >= self.grid_max_x:
-            self.ball1_velocity_x = -self.ball1_velocity_x
-        if self.ball1_y - self.ball_radius <= self.grid_min_y or self.ball1_y + self.ball_radius >= self.grid_max_y:
-            self.ball1_velocity_y = -self.ball1_velocity_y
+        # Reverse direction if Ghost 1 hits a boundary
+        if self.ghost1_x <= self.grid_min_x or self.ghost1_x >= self.grid_max_x - 16:
+            self.ghost1_velocity_x = -self.ghost1_velocity_x
+        if self.ghost1_y <= self.grid_min_y or self.ghost1_y >= self.grid_max_y - 16:
+            self.ghost1_velocity_y = -self.ghost1_velocity_y
 
-        # Move Ball 2
-        self.ball2_x += self.ball2_velocity_x
-        self.ball2_y += self.ball2_velocity_y
+        # Update ghost1 position
+        self.ghost1.position = (self.ghost1_x, self.ghost1_y)
 
-        # Check collision for Ball 2
-        if self.ball2_x - self.ball_radius <= self.grid_min_x or self.ball2_x + self.ball_radius >= self.grid_max_x:
-            self.ball2_velocity_x = -self.ball2_velocity_x
-        if self.ball2_y - self.ball_radius <= self.grid_min_y or self.ball2_y + self.ball_radius >= self.grid_max_y:
-            self.ball2_velocity_y = -self.ball2_velocity_y
+        # Move Ghost 2
+        self.ghost2_x += self.ghost2_velocity_x
+        self.ghost2_y += self.ghost2_velocity_y
 
-        # Draw the boundary grid
-        #pygame.draw.rect(screen, BLACK, (self.grid_min_x, self.grid_min_y, self.grid_max_x - self.grid_min_x, self.grid_max_y - self.grid_min_y), 2)
+        # Reverse direction if Ghost 2 hits a boundary
+        if self.ghost2_x <= self.grid_min_x or self.ghost2_x >= self.grid_max_x - 16:
+            self.ghost2_velocity_x = -self.ghost2_velocity_x
+        if self.ghost2_y <= self.grid_min_y or self.ghost2_y >= self.grid_max_y - 16:
+            self.ghost2_velocity_y = -self.ghost2_velocity_y
 
-        # Draw Ball 1
-        pygame.draw.circle(screen, WHITE, (int(self.ball1_x - distanceFromCamera[0]), int(self.ball1_y - distanceFromCamera[1])), self.ball_radius)
+        # Update ghost2 position
+        self.ghost2.position = (self.ghost2_x, self.ghost2_y)
 
-        # Draw Ball 2
-        pygame.draw.circle(screen, WHITE, (int(self.ball2_x - distanceFromCamera[0]), int(self.ball2_y - distanceFromCamera[1])), self.ball_radius)
+        # Draw the ghosts
+        screen.blit(self.ghost1.sprite.current_image(),
+                    (int(self.ghost1_x - distanceFromCamera[0]), int(self.ghost1_y - distanceFromCamera[1])))
+        screen.blit(self.ghost2.sprite.current_image(),
+                    (int(self.ghost2_x - distanceFromCamera[0]), int(self.ghost2_y - distanceFromCamera[1])))
 
         pygame.display.flip()
 
-    # def check_collision_with_ghosts(self, player_rect):
-    #
-    #
-    #
-    #     ball1Pos = (self.ball1_x, self.ball1_y)
-    #     ball2Pos = (self.ball2_x, self.ball2_y)
-    #
-    #     ghost1_rect = pygame.Rect(ball1Pos[0], ball1Pos[1],
-    #                                     self.GHOSTIMAGE.get_width(),
-    #                                     self.GHOSTIMAGE[0].get_height())
-    #     ghost2_rect = pygame.Rect(ball1Pos[0], ball1Pos[1],
-    #                               self.GHOSTIMAGE.get_width(),
-    #                               self.GHOSTIMAGE[0].get_height())
-    #
-    #     if player_rect.colliderect(ghost1_rect):
-    #         return True
-    #     if player_rect.colliderect(ghost2_rect):
-    #         return True
+
+    def check_collision_with_ghosts(self, player_rect):
+         print(self.ghost1.rect(), player_rect)
+
+
+
+
+         if player_rect.colliderect(self.ghost1.rect()):
+             print(self.ghost1.rect())
+             return True
+         if player_rect.colliderect(self.ghost2.rect()):
+             return True
+         return False
+
 
 
 class ObstacleFloat:
@@ -126,6 +127,6 @@ class ObstacleFloat:
         if self.pos2[1] >= 90.0:
             self.pos2 = [174.0, 42.5]
             self.update_pos(self.pos2[0], self.pos2[1])
-
+    #get the ghosts
 
 

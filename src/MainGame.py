@@ -49,7 +49,8 @@ class Adventure:
             'artifacts': load_pictures('artifacts'),
             'player/thing': AnimationSequence(load_pictures('entities/player/thing')),
             'player/run': AnimationSequence(load_pictures('entities/player/run'), 4),
-            'NPC/tomato' : load_pictures('entities/NPC/tomato')
+            'NPC/tomato' : load_pictures('entities/NPC/tomato'),
+            'float': load_pictures('float')
         }
         self.load_game('map.json')
         self.scroll_offset = [0, 0]
@@ -60,6 +61,7 @@ class Adventure:
         self.current_action = 'thing'
         self.message = NPCMessage(self,419, 20, False)
         self.ghosts = Ghosts(self)
+        self.obstacle = ObstacleFloat(self, 'float')
     def surrounding_tiles(self, position):
         tiles = []
         tile_position = (int(position[0] // self.tile_dimension), int(position[1] // self.tile_dimension))
@@ -113,6 +115,7 @@ class Adventure:
             self.scroll_offset[0] += (self.avatar.rect().centerx - self.render_surface.get_width() / 2 - self.scroll_offset[0]) / 30
             self.scroll_offset[1] += (self.avatar.rect().centery - self.render_surface.get_height() / 2 - self.scroll_offset[1]) / 30
             render_scroll = (int(self.scroll_offset[0]), int(self.scroll_offset[1]))
+            self.obstacle.drawObstacle(self.render_surface, distanceFromCamera=render_scroll)
             self.tomato.drawNPC(self.render_surface, distanceFromCamera=render_scroll)
             self.render(self.render_surface, offset=render_scroll)
             self.avatar.update_avatar(self.tile_layout, (self.movement_status[1] - self.movement_status[0], 0))

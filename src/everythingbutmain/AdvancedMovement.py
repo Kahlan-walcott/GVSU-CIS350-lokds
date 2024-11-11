@@ -81,5 +81,51 @@ class Ghosts:
     #         return True
 
 
+class ObstacleFloat:
+    def __init__(self, maingame, floater):
+        self.maingame = maingame
+        self.floater = maingame.resources[floater]
+        # where the tree is is where they start
+        self.position = [320.0, 40.0]
+        self.pos2 = [174.0, 42.5]
+
+
+    def update_pos(self, posx, posy):
+        # the movement
+        x = self.position[0] + 0.2 / 4
+        y = self.position[1] - -0.3 / 2
+        self.position = [x, y]
+
+        x2 = self.pos2[0] - 0.2 / 4
+        y2 = self.pos2[1] - -0.3 / 2
+        self.pos2 = [x2, y2]
+
+
+    def drawObstacle(self, surface, distanceFromCamera=(0, 0)):
+        # the leaves for the second tree
+        surface.blit(self.floater[0],
+                     (self.position[0] + 6 - distanceFromCamera[0] + 20, self.position[1] + 18 - distanceFromCamera[1]))
+
+        surface.blit(self.floater[0],
+                     (self.position[0] + 7 - distanceFromCamera[0] - 6, self.position[1] - distanceFromCamera[1]))
+        self.update_pos(self.position[0], self.position[1])
+
+        # leaves for the first tree
+        surface.blit(self.floater[0],
+                     (self.pos2[0] + 6 - distanceFromCamera[0] + 20, self.pos2[1] + 18 - distanceFromCamera[1]))
+
+        surface.blit(self.floater[0],
+                     (self.pos2[0] + 9 - distanceFromCamera[0], self.pos2[1] - distanceFromCamera[1]))
+        self.update_pos(self.pos2[0], self.pos2[1])
+
+        # once the second leaves hit 100.0 they restart
+        if self.position[1] >= 100.0:
+            self.position = [320.0, 40.0]
+            self.update_pos(self.position[0], self.position[1])
+        # once the first leaves hit 90.0 they restart
+        if self.pos2[1] >= 90.0:
+            self.pos2 = [174.0, 42.5]
+            self.update_pos(self.pos2[0], self.pos2[1])
+
 
 

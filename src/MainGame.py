@@ -8,26 +8,24 @@ import os
 
 BASE_IMAGE_DIR = 'artifacts/images/'
 
-base_dir = os.path.dirname(os.path.dirname(__file__))
-artifacts_dir = os.path.join(base_dir, 'artifacts')
 
-# Load an image from the artifacts directory
+
 
 
 
 def load_picture(file):
-    picture = pygame.image.load(artifacts_dir + file).convert()
+    picture = pygame.image.load(BASE_IMAGE_DIR + file).convert()
     picture.set_colorkey((0, 0, 0))
     return picture
 
 
 def load_pictures(file):
     pictures = []
-    png_filesNjpg_Files = [f for f in os.listdir(artifacts_dir + file) if f.endswith('.png') or f.endswith('.jpg')]
+    png_filesNjpg_Files = [f for f in os.listdir(BASE_IMAGE_DIR + file) if f.endswith('.png') or f.endswith('.jpg')]
     for img_name in sorted(png_filesNjpg_Files):
         pictures.append(load_picture(file + '/' + img_name))
-    if os.path.exists(artifacts_dir + file):
-        print(f"File exists: {artifacts_dir + file}")
+    if os.path.exists(BASE_IMAGE_DIR + file):
+        print(f"File exists: {BASE_IMAGE_DIR + file}")
     return pictures
 
 

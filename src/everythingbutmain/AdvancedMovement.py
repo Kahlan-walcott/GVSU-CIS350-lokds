@@ -1,84 +1,52 @@
 import pygame
 
+from Sprites import Avatar
+
+
 # Colors
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
 BALL_COLOR_1 = (255, 0, 0)
 BALL_COLOR_2 = (0, 0, 255)
 
-
 class Ghosts:
     def __init__(self, game):
         self.game = game
-        self.ghost1 = Avatar(self.game, 'ghost', (100, 100), (16, 16), 'left')
-        self.ghost2 = Avatar(self.game, 'ghost', (200, 150), (16, 16), 'left')
 
-        # Ghost 1 properties
-        self.ghost1_x = 100
-        self.ghost1_y = 100
-        self.ghost1_velocity_x = 4
-        self.ghost1_velocity_y = 3
-
-        # Ghost 2 properties
-        self.ghost2_x = 200
-        self.ghost2_y = 150
-        self.ghost2_velocity_x = 3
-        self.ghost2_velocity_y = 4
-
-        # Define grid boundaries
-        self.grid_min_x = 0
-        self.grid_max_x = 320
-        self.grid_min_y = 0
-        self.grid_max_y = 240
+        # Define ghost properties
+        self.ghosts = [
+            {'avatar': Avatar(self.game, 'ghost', (100, -35), (16, 16), 'left'), 'x': 100, 'y': -35, 'velocity_x': 2, 'range_x': (80, 240)},
+            {'avatar': Avatar(self.game, 'ghost', (150, 50), (16, 16), 'left'), 'x': 150, 'y': 50, 'velocity_x': 2, 'range_x': (100, 260)},
+            {'avatar': Avatar(self.game, 'ghost', (300, 70), (16, 16), 'left'), 'x': 300, 'y': 70, 'velocity_x': 2, 'range_x': (200, 400)}
+        ]
 
     def draw_ghosts(self, screen, distanceFromCamera=(0, 0)):
-        # Move Ghost 1
-        self.ghost1_x += self.ghost1_velocity_x
-        self.ghost1_y += self.ghost1_velocity_y
+        # Move each ghost horizontally within its defined x-axis range
+        for ghost in self.ghosts:
+            # Update x position based on velocity
+            ghost['x'] += ghost['velocity_x']
 
-        # Reverse direction if Ghost 1 hits a boundary
-        if self.ghost1_x <= self.grid_min_x or self.ghost1_x >= self.grid_max_x - 16:
-            self.ghost1_velocity_x = -self.ghost1_velocity_x
-        if self.ghost1_y <= self.grid_min_y or self.ghost1_y >= self.grid_max_y - 16:
-            self.ghost1_velocity_y = -self.ghost1_velocity_y
+            # Reverse direction if the ghost hits its horizontal boundary
+            if ghost['x'] <= ghost['range_x'][0] or ghost['x'] >= ghost['range_x'][1]:
+                ghost['velocity_x'] = -ghost['velocity_x']
 
-        # Update ghost1 position
-        self.ghost1.position = (self.ghost1_x, self.ghost1_y)
+            # Set the ghost's position (x, fixed y)
+            ghost['avatar'].position = (ghost['x'], ghost['y'])
 
-        # Move Ghost 2
-        self.ghost2_x += self.ghost2_velocity_x
-        self.ghost2_y += self.ghost2_velocity_y
-
-        # Reverse direction if Ghost 2 hits a boundary
-        if self.ghost2_x <= self.grid_min_x or self.ghost2_x >= self.grid_max_x - 16:
-            self.ghost2_velocity_x = -self.ghost2_velocity_x
-        if self.ghost2_y <= self.grid_min_y or self.ghost2_y >= self.grid_max_y - 16:
-            self.ghost2_velocity_y = -self.ghost2_velocity_y
-
-        # Update ghost2 position
-        self.ghost2.position = (self.ghost2_x, self.ghost2_y)
-
-        # Draw the ghosts
-        screen.blit(self.ghost1.sprite.current_image(),
-                    (int(self.ghost1_x - distanceFromCamera[0]), int(self.ghost1_y - distanceFromCamera[1])))
-        screen.blit(self.ghost2.sprite.current_image(),
-                    (int(self.ghost2_x - distanceFromCamera[0]), int(self.ghost2_y - distanceFromCamera[1])))
+            # Draw the ghost at its current position
+            screen.blit(
+                ghost['avatar'].sprite.current_image(),
+                (int(ghost['x'] - distanceFromCamera[0]), int(ghost['y'] - distanceFromCamera[1]))
+            )
 
         pygame.display.flip()
 
-
     def check_collision_with_ghosts(self, player_rect):
-         print(self.ghost1.rect(), player_rect)
-
-
-
-
-         if player_rect.colliderect(self.ghost1.rect()):
-             print(self.ghost1.rect())
-             return True
-         if player_rect.colliderect(self.ghost2.rect()):
-             return True
-         return False
+        # Check for collisions with any ghost
+        for ghost in self.ghosts:
+            if player_rect.colliderect(ghost['avatar'].rect()):
+                return True
+        return False
 
 
 

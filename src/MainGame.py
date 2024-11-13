@@ -33,14 +33,14 @@ class Adventure:
     def __init__(self):
         pygame.init()
         pygame.display.set_caption('Dog\'s Journey Home')
-        pygame.mixer.music.load('artifacts/artifacts/backgroundmusic.mp3')
+        pygame.mixer.music.load('artifacts/backgroundmusic.mp3')
         pygame.mixer.music.set_volume(0.1)
         pygame.mixer.music.play(-1)
 
-        self.jump_sound = pygame.mixer.Sound('artifacts/artifacts/jump-sound.mp3')
+        self.jump_sound = pygame.mixer.Sound('artifacts/jump-sound.mp3')
 
-        self.fall_sound = pygame.mixer.Sound('artifacts/artifacts/falling.mp3')
-		self.tile_dimension = 16
+        self.fall_sound = pygame.mixer.Sound('artifacts/falling.mp3')
+        self.tile_dimension = 16
         self.tile_layout = {}
         self.exterior_tiles = []
         self.window = pygame.display.set_mode((640, 480))

@@ -14,7 +14,7 @@ class Avatar:
         self.distance = (-2, -2)
         self.rotate = False
         self.airBourne = 0
-		self.solid_tiles = solid_tiles
+        self.solid_tiles = solid_tiles
         self.was_on_solid_tile = True  # Initialize to True assuming the character starts on solid ground
         self.was_on_ground = True  # Track if avatar was previously on ground
         self.jump_sound = jump_sound # Store the jump sound

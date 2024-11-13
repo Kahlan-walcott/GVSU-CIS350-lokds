@@ -4,10 +4,7 @@ from everythingbutmain.Sprites import Avatar
 
 
 # Colors
-WHITE = (255, 255, 255)
-BLACK = (0, 0, 0)
-BALL_COLOR_1 = (255, 0, 0)
-BALL_COLOR_2 = (0, 0, 255)
+
 
 class Ghosts:
     def __init__(self, game):

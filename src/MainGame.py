@@ -1,6 +1,6 @@
-from everythingbutmain.Sprites import Avatar, AnimationSequence
-from everythingbutmain.FunkyFeatures import Artifacts, NPCs, NPCMessage
-from everythingbutmain.AdvancedMovement import Ghosts, ObstacleFloat
+ from Sprites import Avatar, AnimationSequence
+from FunkyFeatures import Artifacts, NPCs, NPCMessage
+from AdvancedMovement import Ghosts, ObstacleFloat
 import sys
 import json
 import pygame
@@ -33,13 +33,23 @@ class Adventure:
     def __init__(self):
         pygame.init()
         pygame.display.set_caption('Dog\'s Journey Home')
-        pygame.mixer.music.load('artifacts/backgroundmusic.mp3')
-        pygame.mixer.music.set_volume(0.1)
-        pygame.mixer.music.play(-1)
 
-        self.jump_sound = pygame.mixer.Sound('artifacts/jump-sound.mp3')
+        self.channel1 = pygame.mixer.Channel(0)
+        self.channel1.set_volume(0.1)  # Set volume to 20% of maximum
+        self.channel1.play(pygame.mixer.Sound('artifacts/backgroundmusic.mp3'))
 
-        self.fall_sound = pygame.mixer.Sound('artifacts/falling.mp3')
+        self.channel2 = pygame.mixer.Channel(1)
+        self.channel2.set_volume(0.2)
+
+        self.channel3 = pygame.mixer.Channel(2)
+        self.channel3.set_volume(0.2)
+
+        #self.channel2.play(pygame.mixer.Sound('artifacts/artifacts_falling.mp3'))
+
+
+
+        #pygame.mixer.music.play(-1)
+
         self.tile_dimension = 16
         self.tile_layout = {}
         self.exterior_tiles = []
@@ -128,9 +138,17 @@ class Adventure:
 
     def run(self):
         while True:
+
             self.render_surface.blit(self.resources['background'], (0, 0))
             # self.render_surface.blit(self.resources['artifacts'][0], (300,110))
-            print(self.avatar.position[0], self.avatar.position[1])
+            #print(self.avatar.position[0], self.avatar.position[1])
+            if self.avatar.avatar_velocity[1] > 1:
+                
+                    # Check if the sound is not already playing
+                if not self.channel3.get_busy():
+                    self.channel3.play(pygame.mixer.Sound('artifacts/artifacts_falling.mp3'))
+
+            print(self.avatar.avatar_velocity)
             if self.avatar.position[1] >= 500:
                 Adventure().run()
             self.scroll_offset[0] += (self.avatar.rect().centerx - self.render_surface.get_width() / 2 -
@@ -165,6 +183,7 @@ class Adventure:
                     if event.key == pygame.K_RIGHT:
                         self.movement_status[1] = True
                     if event.key == pygame.K_UP:
+                        self.channel2.play(pygame.mixer.Sound('artifacts/jump-sound.mp3'))
                         self.avatar.avatar_velocity[1] = -2
                 if event.type == pygame.KEYUP:
                     if event.key == pygame.K_LEFT:

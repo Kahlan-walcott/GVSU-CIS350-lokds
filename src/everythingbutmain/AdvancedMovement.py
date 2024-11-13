@@ -1,6 +1,6 @@
 import pygame
 
-from Sprites import Avatar
+from everythingbutmain.Sprites import Avatar
 
 
 # Colors

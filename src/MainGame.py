@@ -82,7 +82,7 @@ class Adventure:
 
 
         }
-        self.load_game('everythingbutmain/map.json')
+        self.load_game('map.json')
         self.scroll_offset = [0, 0]
         self.avatar = Avatar(self, 'player', (0, 0), (10, 10), 'thing')
         self.artifacts = Artifacts(self)

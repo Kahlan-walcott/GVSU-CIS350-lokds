@@ -146,7 +146,7 @@ class Adventure:
             self.render_surface.blit(self.resources['background'], (0, 0))
             # self.render_surface.blit(self.resources['artifacts'][0], (300,110))
             #print(self.avatar.position[0], self.avatar.position[1])
-            if self.avatar.avatar_velocity[1] > 1:
+            if self.avatar.avatar_velocity[1] > 2.5:
                 
                     # Check if the sound is not already playing
                 if not self.channel3.get_busy():

@@ -2,7 +2,7 @@ import pygame
 from everythingbutmain.FunkyFeatures import Artifacts, NPCs
 
 class Avatar:
-	def __init__(self, maingame, avatar_type, position, size, jump_sound, fall_sound, solid_tiles):
+    def __init__(self, maingame, avatar_type, position, size, jump_sound, fall_sound, solid_tiles):
         self.maingame = maingame
         self.avatar_type = avatar_type
         self.position = list(position)

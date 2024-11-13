@@ -1,6 +1,6 @@
-from Sprites import Avatar, AnimationSequence
-from FunkyFeatures import Artifacts, NPCs, NPCMessage
-from AdvancedMovement import Ghosts, ObstacleFloat
+from everythingbutmain.Sprites import Avatar, AnimationSequence
+from everythingbutmain.FunkyFeatures import Artifacts, NPCs, NPCMessage
+from everythingbutmain.AdvancedMovement import Ghosts, ObstacleFloat
 import sys
 import json
 import pygame

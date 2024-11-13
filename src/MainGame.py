@@ -63,9 +63,9 @@ class Adventure:
         self.timer = pygame.time.Clock()
         self.movement_status = [False, False]
         self.resources = {
-            'decor': load_pictures('tiles/decor'),
-            'grass': load_pictures('tiles/grass'),
-            'large_decor': load_pictures('tiles/large_decor'),
+            'decor': load_pictures('/tiles/decor'),
+            'grass': load_pictures('/tiles/grass'),
+            'large_decor': load_pictures('/tiles/large_decor'),
             'stone': load_pictures('tiles/stone'),
             'player': load_picture('entities/player/player.png'),
             'background': load_picture('background.jpg'),

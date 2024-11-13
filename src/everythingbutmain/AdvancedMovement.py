@@ -2,10 +2,6 @@ import pygame
 
 from everythingbutmain.Sprites import Avatar
 
-
-# Colors
-
-
 class Ghosts:
     def __init__(self, game):
         self.game = game

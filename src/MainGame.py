@@ -1,4 +1,4 @@
- from Sprites import Avatar, AnimationSequence
+from Sprites import Avatar, AnimationSequence
 from FunkyFeatures import Artifacts, NPCs, NPCMessage
 from AdvancedMovement import Ghosts, ObstacleFloat
 import sys

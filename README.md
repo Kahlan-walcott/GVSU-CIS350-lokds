@@ -13,8 +13,6 @@ Project description (~1 paragraph)
 ## Prerequisites
 
 ## Run Instructions
-If you want to run this game please fork it and run your forked version.
-
 If you wish to use the command line find your computer of choice below and follow the instructions.
 
 ## Linux users
@@ -41,7 +39,7 @@ If you are using CentOS: type in *yum*
     1. Type *pip3 install pygame* to install Pygame.
     2. Once it is downloaded type *python3* to start the pythong interpreter. Then type *import pygame* if it shows "Hello from the pygame ..." then you can run our game.
 ### Running it
-1. In the command line type *python3 Maingame.py*
+1. Stay on this page, in the command line type *python3 src/Maingame.py*
 2. Now you can play our game. Have fun!
 ## Mack users
 ### Setting it up
@@ -59,7 +57,7 @@ If you are using CentOS: type in *yum*
    1. Type *pip3 install pygame --break-system-packages* to install pygame.
    2. Once it is downloaded type *python3* to start the python interpreter. Then type *import pygame* if it shows "Hello from the pygame ..." then you can run our game.
 ### Running it
-1. In the command line type *python3 Maingame.py*
+1. On this page, in the command line type *python3 src/Maingame.py*
 2. Now you can play our game. Have fun!
 ## Windows users
 ### Setting it up (command prompt)
@@ -75,6 +73,6 @@ Note: There can be different Python commands so try all of them, they are *pytho
    1. Type *py -m pip install pygame-ce* it should say that it is downloading.
    2. Then type *py* (with no commands behind it) The Python interpreter should show up. now you can type *import pygame* and the Pygame version will be shown. Then you can start downloading our game and it should run.
 ### Running it
-1. In command prompt type *py Maingame.py*
+1. Stay on this page, in command prompt type *py src/Maingame.py*
 2. Now you can play our game. Have fun!
 

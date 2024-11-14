@@ -36,7 +36,7 @@ If you are using CentOS: type in *yum*
    3. If there is still an error you need to download it. To do this type *curl ht<span>tps://</span>bootstrap.pypa.io/get-pip.py -o get-pip.py*. Once it downloads type *python3 get-pip.py*. Once that is done retype *pip3 --version*
 #### Install Pygame: (this is what we are using to run our game)
 3. Install Pygame
-    1. Type *pip3 install pygame* to install Pygame.
+    1. Type *pip3 install pygame-ce* to install Pygame.
     2. Once it is downloaded type *python3* to start the pythong interpreter. Then type *import pygame* if it shows "Hello from the pygame ..." then you can run our game.
 ### Running it
 1. Stay on this page, in the command line type *python3 src/Maingame.py*

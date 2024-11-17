@@ -8,6 +8,7 @@
 * Twin flowers (decor/3.png) from Devant Art - Artist: Neoriceisgood
 * Leaf (float/0.png) from Devant Art - Artist: Yorialu
 * Magic Items (5.png, 6.png, 7.png, 8.png, 9.png) from Open Game Art - Artist: Jetrel
+* forest-background from Open Game Art - Artist ansimuz
 
 ## Platformer Learning Material 
 * Pygame Tutorial - Making a Platformer ep. 2: Images, Input, and Collisions, Link: https://www.youtube.com/watch?v=Qdeb1iinNtk, Accessed: Sept. 6, 2024

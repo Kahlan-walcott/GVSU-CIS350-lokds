@@ -25,10 +25,10 @@ If you are using Fedora: type in *dnf*
 If you are using CentOS: type in *yum*
 ### Setting it up
 #### Check your python version:
-1. Run the command <font color="red">*python3 --version*</font>
+1. Run the command $\textsf{\color{red}python3 --version}$
     1. If it is 3.7.7 or higher you are good and can move on to the next step.     
-    2. If you don't have Python you need to install it. If you have instructions on your screen follow those. If not type in <font color="red">*sudo* **system** *install python3.13*</font>
-    3. If you have an older version you have to upgrade it. You can type <font color="red">*sudo* **system** *upgrade python3*</font>. Since you upgraded Python you are also going to upgrade pip. You can type <font color="red">*sudo*  **system** *upgrade python3-pip*</font>.
+    2. If you don't have Python you need to install it. If you have instructions on your screen follow those. If not type in <code>*sudo* **system** *install python3.13*</code>
+    3. If you have an older version you have to upgrade it. You can type <code>*sudo* **system** *upgrade python3*</code>. Since you upgraded Python you are also going to upgrade pip. You can type *sudo*  **system** *upgrade python3-pip*.
 #### Check your PIP version: (allows you to install python packages)
 2. Run the command *pip3 --version*
    1. If you just downloaded Python it should show up, and you don't have to do anything else in this step.

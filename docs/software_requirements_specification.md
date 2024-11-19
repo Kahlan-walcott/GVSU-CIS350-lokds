@@ -32,7 +32,18 @@ The purpose of this document is to establish the framework behind the developmen
 	1. R1: The character shall be able to give the stored items/artifacts to the NPCs if asked to pass through the "gate".
 11. The character will move to the next level(one step close to home)
 	1. R1: The character shall be allowed to "fall into" the next level as it gives the artifact asked by the NPC.
-   
+12. The atmosphere needs to be meaningful
+    1. R1: The artifacts shall be meaningful to the current level the dog is on.
+    2. R2: The background shall reflect the progression of the story.
+13. The game needs to have enemies
+    1. R1: The character shall overcome an enemy in each level.  
+    2. R2: The enemies shall kill the dog.
+    3. R3: The enemies shall move left to right.
+14. The enemies need to make sense in the game
+    1. R1: The enemies shall reflect the current wold the dog is in.
+15. The game needs multiple changing worlds
+    1. R1: The worlds shall be challenging. 
+    2. R2: The worlds shall fit into the story line.   
 
 # Non-Functional Requirements
 1. Playing music and sound effects throughout the game.
@@ -57,3 +68,16 @@ The purpose of this document is to establish the framework behind the developmen
 	1. R1: The character shall be able to give and receive objects from the NPC.
 9. Character visual appearance.
 	1. R1: The character shall get bigger as it picks up food along the journey.
+10. The character needs to fly
+    1. R1: The dog shall have wings, so he can fly. 
+11. The character can push objects around
+    1. R1: The dog shall be able to push crates around.
+12. The trees need to have leaves falling
+    1. R1: The trees shall have animated leaves that constantly fall.
+13. The wolds need to be different lengths
+    1. R1: The worlds shall range in length.
+14. The game needs a title screen 
+	1. R1: The game shall have a title screen telling the user hpw to play the game.
+    2. R2: The title screen shall reflect the game's storyline.
+15. The game needs a congratulation screen
+    1. R1: The user shall see a congratulation screen when they compleat the game. 

@@ -1,6 +1,6 @@
 # lokds
 
-Project description (~1 paragraph)
+In this adventure game, players guide a resurrected dog through two distinct levels of mystical forests, each filled with unique challenges. The first forest is haunted by ghosts, while the second is plagued by sea monsters. The dog must collect specific artifacts in each level to progress, with the ability to jump, fly, and move back and forth between areas to retrieve missed items. Once all the required artifacts are collected, the dog can advance to the second level, and ultimately, after overcoming the challenges of the sea monster-infested forest, return home to its owner. The game blends exploration, puzzle-solving, and platforming to create a deeply emotional and dynamic journey.
 
 ## Team Members and Roles
 

@@ -5,7 +5,7 @@ Project description (~1 paragraph)
 ## Team Members and Roles
 
 * [Olivia Foster](https://github.com/Olivia-Codes/CIS350-HW2-Foster.git) (Scrum leader)
-* [Kahlan Walcott](https://github.com/Kahlan-walcott/CIS350-HW2-Walcott)
+* [Kahlan Walcott](https://github.com/Kahlan-walcott/CIS350-HW2-Walcott) (Quality assurance engineer)
 * [Lasya Priya Vemalla](https://github.com/vemallal/CIS350-HW2-Vemalla)
 * [Sanidhya Didagur](https://github.com/sdidagur1/CIS350-HW2-DIDAGUR.git)
 * [Delaney Kelley](https://github.com/kelleyde/CIS350-HW2-Kelley.git)
@@ -25,10 +25,10 @@ If you are using Fedora: type in *dnf*
 If you are using CentOS: type in *yum*
 ### Setting it up
 #### Check your python version:
-1. Run the command *python3 --version*
+1. Run the command ==*python3 --version*==
     1. If it is 3.7.7 or higher you are good and can move on to the next step.     
-    2. If you don't have Python you need to install it. If you have instructions on your screen follow those. If not type in *sudo* **system** *install python3.13*
-    3. If you have an older version you have to upgrade it. You can type *sudo* **system** *upgrade python3*. Since you upgraded Python you are also going to upgrade pip. You can type *sudo*  **system** *upgrade python3-pip*.
+    2. If you don't have Python you need to install it. If you have instructions on your screen follow those. If not type in ==*sudo* **system** *install python3.13*==
+    3. If you have an older version you have to upgrade it. You can type ==*sudo* **system** *upgrade python3*==. Since you upgraded Python you are also going to upgrade pip. You can type ==*sudo*  **system** *upgrade python3-pip*==.
 #### Check your PIP version: (allows you to install python packages)
 2. Run the command *pip3 --version*
    1. If you just downloaded Python it should show up, and you don't have to do anything else in this step.
@@ -41,7 +41,7 @@ If you are using CentOS: type in *yum*
 ### Running it
 1. Stay on this page, in the command line type *python3 src/Maingame.py*
 2. Now you can play our game. Have fun!
-## Mack users
+## Mac users
 ### Setting it up
 #### Check your Python version:
 1. Run the command *python3 --version*

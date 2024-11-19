@@ -17,4 +17,4 @@ Goals for next week:
 * Olivia will work on the second level and changing from level one to level 2.
 * Kahlan will work on functional and non-functional requirements.
 * Lasya will source a dog bone and house graphics.
-* Sanidhya will continue to work on documentation.
+* Sanidhya will continue to work on documentation and congratulations banner.

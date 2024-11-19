@@ -17,5 +17,5 @@ Goals for next weeks:
 * Kahlan will work on run instructions.
 * Lasya will source house graphics.
 * Delaney will begin working on a title page.
-* Sanidhya will begin working on a congradualtions ending screen.
+* Sanidhya will begin working on a congratulations ending screen.
  

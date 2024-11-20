@@ -83,13 +83,13 @@ class Avatar:
         # Set player's action based on state
         if self.airBourne > 4:  # If in the air for too long, set action to jump
             #self.set_gesture('jump')
-            self.set_gesture('thing')
+            self.set_gesture('jump')
         elif movement[0] != 0:  # If moving horizontally, set action to run
             self.set_gesture('run')
 
         else:  # Otherwise, set action to idle
             #self.set_gesture('idle')
-            self.set_gesture('thing')
+            self.set_gesture('idle')
 
         self.sprite.advance()  # Update the current animation frame
 

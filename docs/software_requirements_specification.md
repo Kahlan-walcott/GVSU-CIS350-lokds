@@ -41,7 +41,7 @@ The purpose of this document is to establish the framework behind the developmen
     3. R3: The enemies shall move left to right.
 14. The enemies need to make sense in the game
     1. R1: The enemies shall reflect the current wold the dog is in.
-15. The game needs multiple changing worlds
+15. The game needs multiple challenging worlds
     1. R1: The worlds shall be challenging. 
     2. R2: The worlds shall fit into the story line.   
 

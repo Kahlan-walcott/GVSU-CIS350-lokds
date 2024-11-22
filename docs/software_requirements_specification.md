@@ -75,7 +75,7 @@ The purpose of this document is to establish the framework behind the developmen
     1. R1: The dog shall be able to push crates around.
 12. The trees need to have leaves falling
     1. R1: The trees shall have animated leaves that constantly fall.
-13. The wolds need to be different lengths
+13. The worlds need to be different lengths
     1. R1: The worlds shall range in length.
 14. The game needs a title screen 
 	1. R1: The game shall have a title screen telling the user hpw to play the game.

@@ -78,7 +78,7 @@ The purpose of this document is to establish the framework behind the developmen
 13. The worlds need to be different lengths
     1. R1: The worlds shall range in length.
 14. The game needs a title screen 
-	1. R1: The game shall have a title screen telling the user hpw to play the game.
+	1. R1: The game shall have a title screen telling the user how to play the game.
     2. R2: The title screen shall reflect the game's storyline.
 15. The game needs a congratulation screen
     1. R1: The user shall see a congratulation screen when they compleat the game. 

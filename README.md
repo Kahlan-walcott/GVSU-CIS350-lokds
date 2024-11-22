@@ -11,7 +11,7 @@ In this adventure game, players guide a resurrected dog through two distinct lev
 * [Delaney Kelley](https://github.com/kelleyde/CIS350-HW2-Kelley.git)
 
 ## Prerequisites
-
+You should have some knowledge of Python and the command line.
 ## Run Instructions
 If you wish to use the command line find your computer of choice below and follow the instructions.
 
@@ -21,11 +21,11 @@ The commands that have a website in them will be in a <code>code block</code>.
 ## Linux users
 Wherever you see **system** below refer to this:
 
-If you are using Ubuntu: type in *apt*
+If you are using Ubuntu: type in $\textsf{\color{#DC143C}apt}$
 
-If you are using Fedora: type in *dnf*
+If you are using Fedora: type in $\textsf{\color{#DC143C}dnf}$
 
-If you are using CentOS: type in *yum*
+If you are using CentOS: type in $\textsf{\color{#DC143C}yum}$
 ### Setting it up
 #### Check your python version:
 1. Run the command $\textsf{\color{#DC143C}python3 --version}$

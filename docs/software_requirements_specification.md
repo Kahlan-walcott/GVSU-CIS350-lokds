@@ -66,6 +66,7 @@ The purpose of this document is to establish the framework behind the developmen
    1. R1: The game shall be able to have multiple moving objects on screen at the same time.
 8. The NPCs can give and take objects.
 	1. R1: The character shall be able to give and receive objects from the NPC.
+	2. R2: The NPC shall dictate if the character can move on to the next world.
 9. Character visual appearance.
 	1. R1: The character shall get bigger as it picks up food along the journey.
 10. The character needs to fly

@@ -15,6 +15,7 @@ In this adventure game, players guide a resurrected dog through two distinct lev
 ## Run Instructions
 If you wish to use the command line find your computer of choice below and follow the instructions.
 
+The commands you need to run will be in this $\textsf{\color{#DC143C}color}$.
 ## Linux users
 Wherever you see **system** below refer to this:
 
@@ -25,21 +26,21 @@ If you are using Fedora: type in *dnf*
 If you are using CentOS: type in *yum*
 ### Setting it up
 #### Check your python version:
-1. Run the command $\textsf{\color{red}python3 --version}$
+1. Run the command $\textsf{\color{#DC143C}python3 --version}$
     1. If it is 3.7.7 or higher you are good and can move on to the next step.     
-    2. If you don't have Python you need to install it. If you have instructions on your screen follow those. If not type in <code>*sudo* **system** *install python3.13*</code>
-    3. If you have an older version you have to upgrade it. You can type <code>*sudo* **system** *upgrade python3*</code>. Since you upgraded Python you are also going to upgrade pip. You can type *sudo*  **system** *upgrade python3-pip*.
+    2. If you don't have Python you need to install it. If you have instructions on your screen follow those. If not type in $\textsf{\color{#DC143C}sudo}$ **system** $\textsf{\color{#DC143C}install python3.13}$
+    3. If you have an older version you have to upgrade it. You can type $\textsf{\color{#DC143C}sudo}$ **system** $\textsf{\color{#DC143C}upgrade python3}$. Since you upgraded Python you are also going to upgrade pip. You can type $\textsf{\color{#DC143C}sudo}$ **system** $\textsf{\color{#DC143C}upgrade python3-pip}$.
 #### Check your PIP version: (allows you to install python packages)
-2. Run the command *pip3 --version*
+2. Run the command $\textsf{\color{#DC143C}pip3 --version}$
    1. If you just downloaded Python it should show up, and you don't have to do anything else in this step.
-   2. If it doesn't work first type *pip --version*. if it shows up use *pip* where ever you see *pip3* in the following steps.
-   3. If there is still an error you need to download it. To do this type *curl ht<span>tps://</span>bootstrap.pypa.io/get-pip.py -o get-pip.py*. Once it downloads type *python3 get-pip.py*. Once that is done retype *pip3 --version*
+   2. If it doesn't work first type $\textsf{\color{#DC143C}pip --version}$. If it shows up use *pip* where ever you see *pip3* in the following steps.
+   3. If there is still an error you need to download it. To do this type *curl ht<span>tps://</span>bootstrap.pypa.io/get-pip.py -o get-pip.py*. Once it downloads type $\textsf{\color{#DC143C}python3 get-pip.py}$. Once that is done retype $\textsf{\color{#DC143C}pip3 --version}$.
 #### Install Pygame: (this is what we are using to run our game)
 3. Install Pygame
-    1. Type *pip3 install pygame-ce* to install Pygame.
-    2. Once it is downloaded type *python3* to start the pythong interpreter. Then type *import pygame* if it shows "Hello from the pygame ..." then you can run our game.
+    1. Type $\textsf{\color{#DC143C}pip3 install pygame-ce}$ to install Pygame.
+    2. Once it is downloaded type $\textsf{\color{#DC143C}python3}$ to start the pythong interpreter. Then type $\textsf{\color{#DC143C}import pygame}$ if it shows "Hello from the pygame ..." then you can run our game.
 ### Running it
-1. Stay on this page, in the command line type *python3 src/Maingame.py*
+1. Stay on this page, in the command line type $\textsf{\color{#DC143C}python3 src/Maingame.py}$
 2. Now you can play our game. Have fun!
 ## Mac users
 ### Setting it up

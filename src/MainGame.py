@@ -94,6 +94,8 @@ class Adventure:
         self.message = NPCMessage(self, 419, 20, False)
         self.ghosts = Ghosts(self)
         self.obstacle = ObstacleFloat(self, 'float')
+		self.game_completed = False #for congratulation banner
+
 
     def surrounding_tiles(self, position):
         tiles = []
@@ -156,6 +158,7 @@ class Adventure:
 
             print(self.avatar.avatar_velocity)
             if self.avatar.position[1] >= 500:
+				self.game_completed = True
                 Adventure().run()
             self.scroll_offset[0] += (self.avatar.rect().centerx - self.render_surface.get_width() / 2 -
                                       self.scroll_offset[0]) / 30
@@ -179,6 +182,13 @@ class Adventure:
             if self.ghosts.check_collision_with_ghosts(self.avatar.rect()):
                 Adventure().run()
 
+			if self.game_completed:
+                self.display_congratulations(self.render_surface)
+                pygame.display.update()
+                pygame.time.wait(3000)  # Pause for 3 seconds
+                pygame.quit()
+                sys.exit()
+
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     pygame.quit()
@@ -200,6 +210,22 @@ class Adventure:
             pygame.display.update()
 
             self.timer.tick(60)
+	def display_congratulations(self, screen):
+        """Render the congratulations banner."""
+        banner_rect = pygame.Rect(0, 0, screen.get_width(), 100)
+        banner_rect.center = (screen.get_width() // 2, screen.get_height() // 2)
+
+        # Draw banner background
+        pygame.draw.rect(screen, pygame.Color('gold'), banner_rect)
+        pygame.draw.rect(screen, pygame.Color('black'), banner_rect, 5)  # Border
+
+        # Render text
+        font = pygame.font.SysFont('Arial', 15, bold=True)
+        text_surface = font.render("Congratulations! You reached home!", True, pygame.Color('black'))
+        text_rect = text_surface.get_rect(center=banner_rect.center)
+
+        # Display text
+        screen.blit(text_surface, text_rect)
 
 
 Adventure().run()

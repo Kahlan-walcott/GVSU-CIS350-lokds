@@ -4,10 +4,12 @@ import pygame
 
 
 
+
+
 # Player class definition
 class Avatar:
-    def __init__(self, maingame, avatar_type, position, size, gesture):
-        self.maingame = maingame  # Reference to the Game instance
+    def __init__(self, maingame, avatar_type, position, size, gesture=None):
+        self.maingame = maingame  # Reference to the Game instanceone
         self.avatar_type = avatar_type  # Set the type of the player entity
         self.position = list(position)  # Initialize the player's position as a list
         self.size = size  # Set the player's size
@@ -15,7 +17,19 @@ class Avatar:
         self.collisions = {'up': False, 'down': False, 'right': False, 'left': False}  # Collision status
 
         self.gesture = gesture
-        self.sprite = self.maingame.resources[self.avatar_type + '/' + self.gesture]
+        try:
+            if self.gesture != None:
+                self.sprite = self.maingame.resources[self.avatar_type + '/' + self.gesture]
+            else:
+                self.sprite = self.maingame.resources[self.avatar_type]
+        except KeyError:
+            if self.avatar_type == 'seaMonster':
+                self.sprite = None
+            else:
+                self.sprite = self.maingame.resources[self.avatar_type]
+
+            print(self.avatar_type)
+
 
         # Current action of the player
         self.distance = (-2,-2)  # Offset for the animation rendering
@@ -82,18 +96,22 @@ class Avatar:
 
         # Set player's action based on state
         if self.airBourne > 4:  # If in the air for too long, set action to jump
-            #self.set_gesture('jump')
+           
+            #self.set_gesture('thing')
             self.set_gesture('jump')
         elif movement[0] != 0:  # If moving horizontally, set action to run
             self.set_gesture('run')
 
         else:  # Otherwise, set action to idle
             #self.set_gesture('idle')
+            #self.set_gesture('thing')
             self.set_gesture('idle')
 
         self.sprite.advance()  # Update the current animation frame
+    def update_NPC(self):
+        self.sprite.advance()
 
-    # Function to render the player on a given surface with an offset
+        # Function to render the player on a given surface with an offset
     def render(self, surf, offset=(0, 0)):
         surf.blit(pygame.transform.flip(self.sprite.current_image(), self.rotate, False),
                   (self.position[0] - offset[0] + self.distance[0], self.position[1] - offset[1] + self.distance[1]))  # Position the image with the offset
@@ -122,14 +140,3 @@ class AnimationSequence:
     # Function to get the current image frame for rendering
     def current_image(self):
         return self.frames[int(self.current_frame_index / self.duration_per_frame)]  # Return the current image frame based on the current frame index and image duration
-
-
-
-
-
-
-
-
-
-
-

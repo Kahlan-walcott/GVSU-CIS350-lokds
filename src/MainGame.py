@@ -72,6 +72,8 @@ class Adventure:
             'player/run': AnimationSequence(load_pictures('entities/player/run'), 4),
             'NPC/tomato': AnimationSequence(load_pictures('entities/NPC/tomato')),
             'NPC/Chipmunk': AnimationSequence(load_pictures('entities/NPC/Chipmunk')),
+            'player/idle': AnimationSequence(load_pictures('entities/player/idle'), 4), 
+            'player/jump': AnimationSequence(load_pictures('entities/player/jump'), 4),
             'float': load_pictures('float'),
             'ghost/down' : AnimationSequence(load_pictures('entities/ghost/down'), 0.5),
             'ghost/up': AnimationSequence(load_pictures('entities/ghost/up'), 0.5),

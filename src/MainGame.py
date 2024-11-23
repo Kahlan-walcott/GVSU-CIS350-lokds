@@ -94,7 +94,7 @@ class Adventure:
         self.message = NPCMessage(self, 419, 20, False)
         self.ghosts = Ghosts(self)
         self.obstacle = ObstacleFloat(self, 'float')
-		self.game_completed = False #for congratulation banner
+	self.game_completed = False #for congratulation banner
 
 
     def surrounding_tiles(self, position):

@@ -1,5 +1,6 @@
 import pygame
 import random
+from everythingbutmain.Sprites import Avatar
 class Artifacts:
 
     def __init__(self, maingame):

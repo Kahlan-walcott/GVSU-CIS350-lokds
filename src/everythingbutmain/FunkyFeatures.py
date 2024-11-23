@@ -6,16 +6,27 @@ class Artifacts:
         self.maingame = maingame
         self.not_picked_up = {}
         i = 0
+        if self.maingame.currentMap == 'map.json':
+            for artifact in maingame.resources['artifacts']:
 
-        for artifact in maingame.resources['artifacts']:
-
-            random_x = random.randint(0, 400)
-            random_y = random.randint(20, 50)
-            while self.maingame.physics_rectangles([random_x, random_y]):
                 random_x = random.randint(0, 400)
                 random_y = random.randint(20, 50)
-            self.not_picked_up[i] = [artifact, [random_x, random_y]]
-            i+=1
+                while self.maingame.physics_rectangles([random_x, random_y]):
+                    random_x = random.randint(0, 400)
+                    random_y = random.randint(20, 50)
+                self.not_picked_up[i] = [artifact, [random_x, random_y]]
+                i+=1
+        else:
+            for artifact in maingame.resources['artifacts']:
+
+                random_x = random.randint(0, 500)
+                random_y = random.randint(-9, 50)
+                while self.maingame.physics_rectangles([random_x, random_y]):
+                    random_x = random.randint(0, 500)
+                    random_y = random.randint(-9, 50)
+                self.not_picked_up[i] = [artifact, [random_x, random_y]]
+                i+=1
+
         self.canDogMoveOn = False
         self.distance = (-2, -2)
 
@@ -53,12 +64,19 @@ class Artifacts:
 
 
 
-class NPCs:
-    def __init__(self, maingame, avatar):
+class NPCs(Avatar):
+    def __init__(self, maingame, avatar_type, position, size, gesture=None):
+        super().__init__(maingame, avatar_type, position, size, gesture=None)
         self.maingame = maingame
-        self.avatar =  maingame.resources[avatar]
-        self.position = [419, 86.1]
+        self.avatar_type =  avatar_type
+        self.position = position
+        self.size = size
         self.distance = (-2, -2)
+        if self.maingame.currentMap == 'map.json':
+            self.position = [419, 86.1]
+
+        else:
+            self.position = [742, 6]
 
 
 
@@ -70,7 +88,7 @@ class NPCs:
 
 
         NPC_position = (self.position[0] + self.distance[0], self.position[1] + self.distance[1])
-        NPC_rect = pygame.Rect(NPC_position[0], NPC_position[1], self.avatar[0].get_width(), self.avatar[0].get_height())
+        NPC_rect = pygame.Rect(NPC_position[0], NPC_position[1], self.size[0], self.size[1])
 
         if player_rect.colliderect(NPC_rect):
 
@@ -99,10 +117,13 @@ class NPCMessage:
         text_rect = text_surface.get_rect()
         text_rect.x = rect.x + 5
         text_rect.y = rect.y + 5
-        if self.maingame.artifacts.canDogMoveOn:
-            self.setMessage('You have collected\nall magical artifacts.\nYou may move forward!')
+        if not self.maingame.artifacts.canDogMoveOn:
+            self.setMessage('You have not collected\nall magical bones.\nGo back to collect\nmagical bones.')
         else:
-            self.setMessage('You have not collected\nall magical artifacts.\nGo back to collect\nmagical artifacts.')
+            self.setMessage('You are so close!\nYou have all\nthe magical bones!\nTime to go home!!!')
+
+
+
 
 
         pygame.draw.rect(screen, self.color, rect)  # No border width means a solid fill

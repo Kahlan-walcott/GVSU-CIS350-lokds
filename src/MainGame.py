@@ -112,7 +112,7 @@ class Adventure:
                 tiles.append(self.tile_layout[check_position])
         return tiles
         
-     def display_congratulations(self, screen):
+    def display_congratulations(self, screen):
         """Render the congratulations banner."""
         banner_rect = pygame.Rect(0, 0, screen.get_width(), 100)
         banner_rect.center = (screen.get_width() // 2, screen.get_height() // 2)

@@ -47,6 +47,7 @@ class Adventure:
 
         self.channel3 = pygame.mixer.Channel(2)
         self.channel3.set_volume(0.2)
+        self.currentMap = currentMap
 
        
 

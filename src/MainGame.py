@@ -94,7 +94,7 @@ class Adventure:
         self.message = NPCMessage(self, 419, 20, False)
         self.ghosts = Ghosts(self)
         self.obstacle = ObstacleFloat(self, 'float')
-	self.game_completed = False #for congratulation banner
+        self.game_completed = False #for congratulation banner
 
 
     def surrounding_tiles(self, position):
@@ -158,7 +158,7 @@ class Adventure:
 
             print(self.avatar.avatar_velocity)
             if self.avatar.position[1] >= 500:
-				self.game_completed = True
+                self.game_completed = True
                 Adventure().run()
             self.scroll_offset[0] += (self.avatar.rect().centerx - self.render_surface.get_width() / 2 -
                                       self.scroll_offset[0]) / 30
@@ -182,7 +182,7 @@ class Adventure:
             if self.ghosts.check_collision_with_ghosts(self.avatar.rect()):
                 Adventure().run()
 
-			if self.game_completed:
+            if self.game_completed:
                 self.display_congratulations(self.render_surface)
                 pygame.display.update()
                 pygame.time.wait(3000)  # Pause for 3 seconds
@@ -210,7 +210,7 @@ class Adventure:
             pygame.display.update()
 
             self.timer.tick(60)
-	def display_congratulations(self, screen):
+    def display_congratulations(self, screen):
         """Render the congratulations banner."""
         banner_rect = pygame.Rect(0, 0, screen.get_width(), 100)
         banner_rect.center = (screen.get_width() // 2, screen.get_height() // 2)

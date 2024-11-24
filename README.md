@@ -49,7 +49,7 @@ If you are using CentOS: type in $\textsf{\color{#DC143C}yum}$
 ### Setting it up
 #### Check your Python version:
 1. Run the command $\textsf{\color{#DC143C}python3 --version}$
-   1. If there was an error, or it is not found you need to download it. To do this you can go to the official Python website and download the version for mack https://www.python.org/downloads/. You can also do this by downloading homebrew https://brew.sh/ this website will give you more information about it, but I will give to the command to download it. The command to download is <code>/bin/bash -c "$(curl -fsSL ht<span>tps://</span>raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"</code>. Once it is downloaded you need to type $\textsf{\color{#DC143C}brew install python}$ to get Python.
+   1. If there was an error, or it is not found you need to download it. To do this you can go to the official Python website and download the version for mac https://www.python.org/downloads/. You can also do this by downloading homebrew https://brew.sh/ this website will give you more information about it, but I will give to the command to download it. The command to download is <code>/bin/bash -c "$(curl -fsSL ht<span>tps://</span>raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"</code>. Once it is downloaded you need to type $\textsf{\color{#DC143C}brew install python}$ to get Python.
    2. Type $\textsf{\color{#DC143C}python3 --version}$ again to confirm that it has been downloaded correctly.
 #### Check your PIP version: (allows you to install Python packages)
 2. Run the command $\textsf{\color{#DC143C}pip3 --version}$
@@ -65,7 +65,7 @@ If you are using CentOS: type in $\textsf{\color{#DC143C}yum}$
 2. On this page, in the command line type $\textsf{\color{#DC143C}python3 src/Maingame.py}$
 3. Now you can play our game. Have fun!
 ## Windows users
-### Setting it up (command prompt)
+### Setting it up (Command Prompt or Windows PowerShell)
 Note: There can be different Python commands so try all of them, they are $\textsf{\color{#DC143C}python}$, $\textsf{\color{#DC143C}python3}$, and $\textsf{\color{#DC143C}py}$. Wherever you see $\textsf{\color{#DC143C}py}$ replace it with the Python command that works for your computer. If $\textsf{\color{#DC143C}py}$ works then you can just copy what we have.
 1. Run the command $\textsf{\color{#DC143C}py --version}$
    1. If it says it was not found try the other Python commands. If none of them work try downloading Python. To do this go to the official page for Python on Windows https://www.python.org/downloads/. Then click the yellow button this should be the most recent version. Once it is done uploading open the file and install it to your computer. Once it is done you can close the window and go back to the command prompt.

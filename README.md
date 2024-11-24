@@ -34,11 +34,11 @@ If you are using CentOS: type in $\textsf{\color{#DC143C}yum}$
     3. If you have an older version you have to upgrade it. You can type $\textsf{\color{#DC143C}sudo}$ **system** $\textsf{\color{#DC143C}upgrade python3}$. Since you upgraded Python you are also going to upgrade pip. You can type $\textsf{\color{#DC143C}sudo}$ **system** $\textsf{\color{#DC143C}upgrade python3-pip}$.
 #### Check your PIP version: (allows you to install python packages)
 2. Run the command $\textsf{\color{#DC143C}pip3 --version}$
-   1. If you have it then you can move on the the next step. 
+   1. If you have it then you can move on to the next step. 
    2. If you don't have it type in $\textsf{\color{#DC143C}sudo}$ **system** $\textsf{\color{#DC143C}install python3-pip}$.
 #### Install Pygame: (this is what we are using to run our game)
 3. Now type in $\textsf{\color{#DC143C}python3}$ (with no commands behind it) and then type $\textsf{\color{#DC143C}import pygame}$.
-    1. If the message 'Hello form the ...' then you are good and can run our game. You can move on to running it.
+    1. If the message 'Hello from the ...' then you are good and can run our game. You can move on to running it.
 	2. If the message dosen't show up then you need to install it. To do that first type  $\textsf{\color{#DC143C}exit()}$ to stop python. Then type $\textsf{\color{#DC143C}pip3 install pygame-ce}$ to install Pygame.
     3. Once it is downloaded type $\textsf{\color{#DC143C}python3}$ to start the python interpreter. Then type $\textsf{\color{#DC143C}import pygame}$ if it shows "Hello from the pygame ..." then you can run our game.
 ### Running it
@@ -49,7 +49,7 @@ If you are using CentOS: type in $\textsf{\color{#DC143C}yum}$
 ### Setting it up
 #### Check your Python version:
 1. Run the command $\textsf{\color{#DC143C}python3 --version}$
-   1. If there was an error, or it is not found you need to download it. To do this you can go to the official Python website and download the version for mac https://www.python.org/downloads/. You can also do this by downloading homebrew https://brew.sh/ this website will give you more information about it, but I will give to the command to download it. The command to download is <code>/bin/bash -c "$(curl -fsSL ht<span>tps://</span>raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"</code>. Once it is downloaded you need to type $\textsf{\color{#DC143C}brew install python}$ to get Python.
+   1. If there was an error, or it is not found you need to download it. To do this you can go to the official Python website and download the version for Mac https://www.python.org/downloads/. You can also do this by downloading homebrew https://brew.sh/ this website will give you more information about it, but I will give you the command to download it. The command to download is <code>/bin/bash -c "$(curl -fsSL ht<span>tps://</span>raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"</code>. Once it's downloaded you need to type $\textsf{\color{#DC143C}brew install python}$ to get Python.
    2. Type $\textsf{\color{#DC143C}python3 --version}$ again to confirm that it has been downloaded correctly.
 #### Check your PIP version: (allows you to install Python packages)
 2. Run the command $\textsf{\color{#DC143C}pip3 --version}$
@@ -73,12 +73,12 @@ Note: There can be different Python commands so try all of them, they are $\text
 #### Check your PIP version: (allows you to install Python packages)
 2. Run the command $\textsf{\color{#DC143C}pip --version}$
    1. If it gives an error keep going because it might not recognize $\textsf{\color{#DC143C}pip}$ as a command because it is not in the PATH.
-#### Install pygame: (what we are using to run our game)
+#### Install Pygame: (what we are using to run our game)
 3. Install Pygame
    1. Type $\textsf{\color{#DC143C}py -m pip install pygame-ce}$ it should say that it is downloading.
    2. Then type $\textsf{\color{#DC143C}py}$ (with no commands behind it) The Python interpreter should show up. now you can type $\textsf{\color{#DC143C}import pygame}$ and the Pygame version will be shown. Then you can start downloading our game and it should run.
 ### Running it
 1. If you just typed $\textsf{\color{#DC143C}import pygame}$, type  $\textsf{\color{#DC143C}exit()}$
-2. Stay on this page, in command prompt type $\textsf{\color{#DC143C}py src/Maingame.py}$
+2. Stay on this page, in the Command Prompt or Windows PowerShell type $\textsf{\color{#DC143C}py src/Maingame.py}$
 3. Now you can play our game. Have fun!
 

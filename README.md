@@ -27,7 +27,7 @@ If you are using Fedora: type in $\textsf{\color{#DC143C}dnf}$
 
 If you are using CentOS: type in $\textsf{\color{#DC143C}yum}$
 ### Setting it up
-#### Check your python version:
+#### Check your Python version:
 1. Run the command $\textsf{\color{#DC143C}python3 --version}$
     1. If it is 3.7.7 or higher you are good and can move on to the next step.     
     2. If you don't have Python you need to install it. If you have instructions on your screen follow those. If not type in $\textsf{\color{#DC143C}sudo}$ **system** $\textsf{\color{#DC143C}install python3.13}$
@@ -62,11 +62,12 @@ If you are using CentOS: type in $\textsf{\color{#DC143C}yum}$
    2. Once it is downloaded type $\textsf{\color{#DC143C}python3}$ to start the Python interpreter. Then type $\textsf{\color{#DC143C}import pygame}$ if it shows "Hello from the pygame ..." then you can run our game.
 ### Running it
 1. If you just typed $\textsf{\color{#DC143C}import pygame}$, type $\textsf{\color{#DC143C}exit()}$.
-2. On this page, in the command line type $\textsf{\color{#DC143C}python3 src/Maingame.py}$
+2. On this page, in the command line type $\textsf{\color{#DC143C}python3 src/Maingame.py}$.
 3. Now you can play our game. Have fun!
 ## Windows users
 ### Setting it up (Command Prompt or Windows PowerShell)
 Note: There can be different Python commands so try all of them, they are $\textsf{\color{#DC143C}python}$, $\textsf{\color{#DC143C}python3}$, and $\textsf{\color{#DC143C}py}$. Wherever you see $\textsf{\color{#DC143C}py}$ replace it with the Python command that works for your computer. If $\textsf{\color{#DC143C}py}$ works then you can just copy what we have.
+#### Check your Python version:
 1. Run the command $\textsf{\color{#DC143C}py --version}$
    1. If it says it was not found try the other Python commands. If none of them work try downloading Python. To do this go to the official page for Python on Windows https://www.python.org/downloads/. Then click the yellow button this should be the most recent version. Once it is done uploading open the file and install it to your computer. Once it is done you can close the window and go back to the command prompt.
    2. If it shows the version make sure it is 3.7 or higher. If it is your good and can move on. If not go to the link above and install the latest version of Python.
@@ -76,9 +77,9 @@ Note: There can be different Python commands so try all of them, they are $\text
 #### Install Pygame: (what we are using to run our game)
 3. Install Pygame
    1. Type $\textsf{\color{#DC143C}py -m pip install pygame-ce}$ it should say that it is downloading.
-   2. Then type $\textsf{\color{#DC143C}py}$ (with no commands behind it) The Python interpreter should show up. now you can type $\textsf{\color{#DC143C}import pygame}$ and the Pygame version will be shown. Then you can start downloading our game and it should run.
+   2. Then type $\textsf{\color{#DC143C}py}$ (with no commands behind it) The Python interpreter should show up. Now you can type $\textsf{\color{#DC143C}import pygame}$ if it shows "Hello from the pygame ..." then you can run our game.
 ### Running it
-1. If you just typed $\textsf{\color{#DC143C}import pygame}$, type  $\textsf{\color{#DC143C}exit()}$
-2. Stay on this page, in the Command Prompt or Windows PowerShell type $\textsf{\color{#DC143C}py src/Maingame.py}$
+1. If you just typed $\textsf{\color{#DC143C}import pygame}$, type  $\textsf{\color{#DC143C}exit()}$.
+2. Stay on this page, in the Command Prompt or Windows PowerShell type $\textsf{\color{#DC143C}py src/Maingame.py}$.
 3. Now you can play our game. Have fun!
 

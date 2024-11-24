@@ -185,7 +185,7 @@ class Adventure:
                     self.channel3.play(pygame.mixer.Sound('artifacts/artifacts_falling.mp3'))
 
             #print(self.avatar.position)
-            if self.avatar.position[1] >= 500:
+            if self.avatar.position[1] >= 250:
                 Adventure(self.currentMap).run()
             self.scroll_offset[0] += (self.avatar.rect().centerx - self.render_surface.get_width() / 2 -
                                       self.scroll_offset[0]) / 30

@@ -222,6 +222,8 @@ class Adventure:
             self.ghosts.check_collision_with_ghosts(self.avatar.rect())
             if self.ghosts.check_collision_with_ghosts(self.avatar.rect()):
                 Adventure(self.currentMap).run()
+            if self.currentMap == 'map2.json' and self.avatar.position[0] >= 1004 and self.artifacts.canDogMoveOn:
+                self.display_congratulations(self.render_surface)
 
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:

@@ -7,9 +7,9 @@
 * Crate (decor/2.png) from Devant Art - Artist: SilverVoidArt
 * Twin flowers (decor/3.png) from Devant Art - Artist: Neoriceisgood
 * Leaf (float/0.png) from Devant Art - Artist: Yorialu
-* Magic Items (5.png, 6.png, 7.png, 8.png, 9.png) from Open Game Art - Artist: Jetrel
+* Magic Items (5.png, 6.png, 7.png, 8.png, 9.png) from Open Game Art - Artist: Jetrel -
   Link: https://opengameart.org/content/16x16-rpg-items
-* forest-background from Open Game Art - Artist: ansimuz
+* forest-background from Open Game Art - Artist: ansimuz -
   Link: https://opengameart.org/content/forest-background
 
 ## Platformer Learning Material 

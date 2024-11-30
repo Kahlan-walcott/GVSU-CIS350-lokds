@@ -8,7 +8,9 @@
 * Twin flowers (decor/3.png) from Devant Art - Artist: Neoriceisgood
 * Leaf (float/0.png) from Devant Art - Artist: Yorialu
 * Magic Items (5.png, 6.png, 7.png, 8.png, 9.png) from Open Game Art - Artist: Jetrel
+  Link: https://opengameart.org/content/16x16-rpg-items
 * forest-background from Open Game Art - Artist: ansimuz
+  Link: https://opengameart.org/content/forest-background
 
 ## Platformer Learning Material 
 * Pygame Tutorial - Making a Platformer ep. 2: Images, Input, and Collisions, Link: https://www.youtube.com/watch?v=Qdeb1iinNtk, Accessed: Sept. 6, 2024
@@ -17,3 +19,4 @@
 * Pygame Tutorial - Making a Platformer ep. 5: Animations, Link: https://www.youtube.com/watch?v=l-GUfEJcTH4, Accessed: Sept. 21, 2024
 * Flipping, Rotating, Scaling, & Resizing - Pygame Tutorial, Link: https://www.youtube.com/watch?v=Gbno4Q5Tros, Accessed: Sept. 25, 2024
 * Pygame Tutorial - Objects & Enemies, Link: https://www.youtube.com/watch?v=n4feYKKDncs, Accessed: Sept. 26, 2024
+* Pygame Tutorial - Menus, Link: https://www.youtube.com/watch?v=0RryiSjpJn0&t=296s, Accessed: Nov. 30, 2024

@@ -33,6 +33,66 @@ ADJACENT_OFFSETS = [(-1, 0), (-1, -1), (0, -1), (1, -1), (1, 0), (0, 0), (-1, 1)
 PHYSICS_TILES = {'grass', 'stone'}
 
 
+# Title screen
+class Title:
+    def __init__(self):
+        pygame.init()
+        pygame.display.set_caption('Main Menu')
+        self.screen = pygame.display.set_mode((640, 480))
+
+    def write(self, msg, size, color, coordinates):
+        # set message, and size
+        font = pygame.font.SysFont('Times New Roman', size, bold=True)
+        # render font and color
+        msgobj = font.render(msg, True, color)
+        # display message
+        self.screen.blit(msgobj, coordinates)
+
+    def title_screen(self):
+        # title screen game loop
+        while True:
+            # display background, start and exit buttons
+            self.screen.blit(load_picture("titleBackground.png"), (0, 0))
+            start_button = self.screen.blit(load_picture("start.png"), (220, 305))
+            exit_button = self.screen.blit(load_picture("exit.png"), (220, 370))
+
+            # write title, start, and exit buttons
+            self.write('A Dog\'s Journey', 50, 'white', (140, 100))
+            self.write('Home', 50, 'white', (260, 155))
+            self.write('Start', 35, 'white', (285, 310))
+            self.write('Exit', 35, 'white', (290, 375))
+
+            # get mouse position
+            a, b = pygame.mouse.get_pos()
+
+            button_pressed = False
+            # event handler for button clicks
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    pygame.quit()
+                    sys.exit()
+                if event.type == pygame.KEYDOWN:
+                    if event.key == pygame.K_ESCAPE:
+                        pygame.quit()
+                        sys.exit()
+
+                if event.type == pygame.MOUSEBUTTONDOWN:
+                    if event.button == 1:
+                        button_pressed = True
+
+            # check for collisions with buttons
+            if start_button.collidepoint(a, b):
+                if button_pressed:
+                    Adventure().run()
+
+            if exit_button.collidepoint(a, b):
+                if button_pressed:
+                    pygame.quit()
+                    sys.exit()
+
+            pygame.display.update()
+
+
 class Adventure:
     def __init__(self, currentMap='map.json'):
         pygame.init()
@@ -171,7 +231,8 @@ class Adventure:
 
 
     def run(self):
-        while True:
+        play_game = True
+        while play_game is True:
             if self.currentMap == 'map.json':
                 self.render_surface.blit(self.resources['background'], (0, 0))
             else:
@@ -237,6 +298,9 @@ class Adventure:
                     if event.key == pygame.K_UP:
                         self.channel2.play(pygame.mixer.Sound('artifacts/jump-sound.mp3'))
                         self.avatar.avatar_velocity[1] = -2
+                    # exit game back to main menu
+                    if event.key == pygame.K_ESCAPE:
+                        play_game = False
                 if event.type == pygame.KEYUP:
                     if event.key == pygame.K_LEFT:
                         self.movement_status[0] = False
@@ -248,4 +312,4 @@ class Adventure:
             self.timer.tick(60)
 
 
-Adventure().run()
+Title().title_screen()

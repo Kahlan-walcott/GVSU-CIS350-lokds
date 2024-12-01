@@ -96,7 +96,7 @@ This section provides quick access to all the resources we developed for our gam
 ### Jira Board
 * [Jira Board](https://lokds.atlassian.net/jira/software/projects/SCRUM/boards/1)
 
-### Resource the game pulls
+### Resources the game pulls
 #### Music
 * [jump sound](artifacts/jump-sound.mp3)
 * [background music](artifacts/backgroundmusic.mp3)

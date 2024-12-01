@@ -32,7 +32,7 @@ requirements will establish the quality constraints that must be satisfied.
 | FR10 | The player shall be presented with objects to avoid influencing the dog's journey. | 
 | FR11 |       The game shall have collectible artifacts spread throughout the world.        | 
 | FR12 |                    The artifact shall be meaningful to the dog.                     | 
-| FR13 |               The game shall allow the picked up items to be stored.                |
+| FR13 |               The game shall allow the picked-up items to be stored.                |
 | FR14 |                    The dog shall overcome enemies at each level.                    |
 | FR15 |        The enemies shall make the level restart when the dog runs into them.        |
 
@@ -57,7 +57,7 @@ requirements will establish the quality constraints that must be satisfied.
 |:----:|:--------------------------------------------------------------------------------------------------------------------:| 
 | NFR1 | The user shall be able to hear background music and sound effects that match what is visually happening in the game. | 
 | NFR2 |                 The game shall play sound effects for specific actions such as jumping and falling.                  |
-| NFR3 |                  The background music shall be turned down as to not overpower the sound effects.                   |
+| NFR3 |                  The background music shall be turned down to not overpower the sound effects.                       |
 | NFR4 |                    The sound effects shall only play when the specific action is being preformed.                    |
 | NFR5 |                                    The background music shall continuously play.                                     |
 | NFR6 |                             The background music shall restart when the level restarts.                              |
@@ -87,6 +87,14 @@ requirements will establish the quality constraints that must be satisfied.
 # Software Artifacts
 
 This section provides quick access to all the resources we developed for our game. 
+
+### Diagrams
+* [use case diagram](artifacts/use_case_diagram/UseCaseDiagram.pdf)
+* [class diagram]
+* [sequence diagram]
+
+### Jira Board
+* [Jira Board](https://lokds.atlassian.net/jira/software/projects/SCRUM/boards/1)
 
 ### Resource the game pulls
 #### Music
@@ -123,11 +131,3 @@ This section provides quick access to all the resources we developed for our gam
 * [stone](artifacts/images/tiles/stone/0.png)
 * [water](artifacts/images/tiles/water)
 
-
-### Diagrams
-* [use case diagram](artifacts/use_case_diagram/UseCaseDiagram.pdf)
-* [class diagram]
-* [sequence diagram]
-
-### Jira Board
-* [Jira Board](https://lokds.atlassian.net/jira/software/projects/SCRUM/boards/1)

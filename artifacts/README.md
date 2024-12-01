@@ -1,14 +1,11 @@
 # Citations
 ## Graphics
 * background.jpg from FreePik - Artist: @zirinuwu
-* Magic Items (0.png, 1.png, 2.png) from Pinterest - Artist: @Anyela_ atla
 * Single flowers (decor/0.png, 1.png) from Deviant Art - Artist: Brysia
 * Stone (large-decor/0.png) from Devant Art - Artist: SirFluffyCat
 * Crate (decor/2.png) from Devant Art - Artist: SilverVoidArt
 * Twin flowers (decor/3.png) from Devant Art - Artist: Neoriceisgood
 * Leaf (float/0.png) from Devant Art - Artist: Yorialu
-* Magic Items (5.png, 6.png, 7.png, 8.png, 9.png) from Open Game Art - Artist: Jetrel -
-  Link: https://opengameart.org/content/16x16-rpg-items
 * forest-background from Open Game Art - Artist: ansimuz -
   Link: https://opengameart.org/content/forest-background
 

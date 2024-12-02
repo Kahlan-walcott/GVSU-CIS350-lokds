@@ -310,6 +310,9 @@ class Adventure:
             pygame.display.update()
 
             self.timer.tick(60)
+        
+        if not play_game:
+            Title().title_screen()
 
 
 Title().title_screen()

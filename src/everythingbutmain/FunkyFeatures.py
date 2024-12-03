@@ -54,7 +54,6 @@ class Artifacts:
 
         for item in to_remove:
             del self.not_picked_up[item]
-            print('deleted')
         if not self.not_picked_up:
             self.canDogMoveOn = True
 

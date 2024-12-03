@@ -89,7 +89,7 @@ requirements will establish the quality constraints that must be satisfied.
 This section provides quick access to all the resources we developed for our game. 
 
 ### Diagrams
-* [use case diagram](artifacts/use_case_diagram/UseCaseDiagram.pdf)
+* [use case diagram](main/artifacts/use_case_diagram/UseCaseDiagram.pdf)
 * [class diagram]
 * [sequence diagram]
 
@@ -98,7 +98,7 @@ This section provides quick access to all the resources we developed for our gam
 
 ### Resources the game pulls
 #### Music
-* [jump sound](artifacts/jump-sound.mp3)
+* [jump sound](main/artifacts/jump-sound.mp3)
 * [background music](artifacts/backgroundmusic.mp3)
 * [falling sound](artifacts/artifacts_falling.mp3)
 #### Background images

@@ -4,7 +4,7 @@ import pygame
 
 class Avatar:
     def __init__(self, maingame, avatar_type, position, size, gesture=None):
-         """Player class definition. Controls the movements of the player and finds its position in the game."""
+        """Player class definition. Controls the movements of the player and finds its position in the game."""
         self.maingame = maingame  # Reference to the Game instanceone
         self.avatar_type = avatar_type  # Set the type of the player entity
         self.position = list(position)  # Initialize the player's position as a list

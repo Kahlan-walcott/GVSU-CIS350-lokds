@@ -22,7 +22,7 @@ def load_pictures(file):
     png_filesNjpg_Files = [f for f in os.listdir(BASE_IMAGE_DIR + file) if f.endswith('.png') or f.endswith('.jpg')]
     for img_name in sorted(png_filesNjpg_Files):
         pictures.append(load_picture(file + '/' + img_name))
-    if os.path.exists(BASE_IMAGE_DIR + file):
+
     return pictures
 
 

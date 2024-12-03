@@ -89,7 +89,7 @@ requirements will establish the quality constraints that must be satisfied.
 This section provides quick access to all the resources we developed for our game. 
 
 ### Diagrams
-* [use case diagram](main/artifacts/use_case_diagram/UseCaseDiagram.pdf)
+* [use case diagram](../artifacts/use_case_diagram/UseCaseDiagram.pdf)
 * [class diagram]
 * [sequence diagram]
 
@@ -98,36 +98,36 @@ This section provides quick access to all the resources we developed for our gam
 
 ### Resources the game pulls
 #### Music
-* [jump sound](main/artifacts/jump-sound.mp3)
-* [background music](artifacts/backgroundmusic.mp3)
-* [falling sound](artifacts/artifacts_falling.mp3)
+* [jump sound](../artifacts/jump-sound.mp3)
+* [background music](../artifacts/backgroundmusic.mp3)
+* [falling sound](../artifacts/artifacts_falling.mp3)
 #### Background images
-* [first background](artifacts/images/background.jpg)
-* [second background](artifacts/images/forest-background.png)
+* [first background](../artifacts/images/background.jpg)
+* [second background](../artifacts/images/forest-background.png)
 #### Artifacts
-* [first bone](artifacts/images/artifacts/0.png)
-* [second bone](artifacts/images/artifacts/1.png)
-* [third bone](artifacts/images/artifacts/2.png)
-* [fourth bone](artifacts/images/artifacts/3.png)
+* [first bone](../artifacts/images/artifacts/0.png)
+* [second bone](../artifacts/images/artifacts/1.png)
+* [third bone](../artifacts/images/artifacts/2.png)
+* [fourth bone](../artifacts/images/artifacts/3.png)
 #### Entities
-* [first NPC tomato idle](artifacts/images/entities/NPC/tomato)
-* [second NPC chipmunk idle](artifacts/images/entities/NPC/Chipmunk)
-* [first enemy ghost down](artifacts/images/entities/ghost/down)
-* [first enemy ghost left](artifacts/images/entities/ghost/left)
-* [first enemy ghost right](artifacts/images/entities/ghost/right)
-* [first enemy ghost up](artifacts/images/entities/ghost/up)
-* [second enemy sea monster](artifacts/images/entities/seaMonster/0.png)
-* [dog](artifacts/images/entities/player/player.png)
-* [dog idle](artifacts/images/entities/player/idle)
-* [dog jump](artifacts/images/entities/player/jump)
-* [dog run](artifacts/images/entities/player/run)
-* [dog starting image](artifacts/images/entities/player/thing/00.png)
+* [first NPC tomato idle](../artifacts/images/entities/NPC/tomato)
+* [second NPC chipmunk idle](../artifacts/images/entities/NPC/Chipmunk)
+* [first enemy ghost down](../artifacts/images/entities/ghost/down)
+* [first enemy ghost left](../artifacts/images/entities/ghost/left)
+* [first enemy ghost right](./artifacts/images/entities/ghost/right)
+* [first enemy ghost up](../artifacts/images/entities/ghost/up)
+* [second enemy sea monster](../artifacts/images/entities/seaMonster/0.png)
+* [dog](../artifacts/images/entities/player/player.png)
+* [dog idle](../artifacts/images/entities/player/idle)
+* [dog jump](../artifacts/images/entities/player/jump)
+* [dog run](../artifacts/images/entities/player/run)
+* [dog starting image](../artifacts/images/entities/player/thing/00.png)
 #### Leaf
-* [leaf](artifacts/images/float/0.png)
+* [leaf](../artifacts/images/float/0.png)
 #### Tiles
-* [decor](artifacts/images/tiles/decor)
-* [grass](artifacts/images/tiles/grass)
-* [larger decor](artifacts/images/tiles/large_decor)
-* [stone](artifacts/images/tiles/stone/0.png)
-* [water](artifacts/images/tiles/water)
+* [decor](../artifacts/images/tiles/decor)
+* [grass](../artifacts/images/tiles/grass)
+* [larger decor](../artifacts/images/tiles/large_decor)
+* [stone](../artifacts/images/tiles/stone/0.png)
+* [water](../artifacts/images/tiles/water)
 

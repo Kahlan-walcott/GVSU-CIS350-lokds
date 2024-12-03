@@ -1,8 +1,10 @@
 import pygame
-
 from everythingbutmain.Sprites import Avatar
+
+
 class Ghosts:
     def __init__(self, game):
+        """The logic for the collidable enemies."""
         self.game = game
 
         # Define ghost properties
@@ -23,6 +25,7 @@ class Ghosts:
             ]
 
     def draw_ghosts(self, screen, distanceFromCamera=(0, 0)):
+        """draw the enemies on the screen and move the enemies horizontally."""
         # Move each ghost horizontally within its defined x-axis range
         for ghost in self.ghosts:
             # Update x position based on velocity
@@ -54,20 +57,19 @@ class Ghosts:
                         (int(ghost['x'] - distanceFromCamera[0]), int(ghost['y'] - distanceFromCamera[1]))
                     )
 
-
         pygame.display.flip()
 
     def check_collision_with_ghosts(self, player_rect):
-        # Check for collisions with any ghost
+        """Check for collisions with any enemy."""
         for ghost in self.ghosts:
             if player_rect.colliderect(ghost['avatar'].rect()):
                 return True
         return False
 
 
-
 class ObstacleFloat:
     def __init__(self, maingame, floater):
+        """Holds the logic for the leaves falling from the trees."""
         self.maingame = maingame
         self.floater = maingame.resources[floater]
         # where the tree is is where they start
@@ -79,10 +81,8 @@ class ObstacleFloat:
             #Tree Position [689, 6]
             self.position = [689, 6]
 
-
-
-
     def update_pos(self, posx, posy):
+        """Allows the leaves to fall."""
         if self.maingame.currentMap == 'map.json':
         # the movement
             x = self.position[0] + 0.2 / 4
@@ -99,8 +99,8 @@ class ObstacleFloat:
 
 
     def drawObstacle(self, surface, distanceFromCamera=(0, 0)):
+        """Draws the leaves on the screen and determines their stating positions."""
         if self.maingame.currentMap == 'map.json':
-
             # the leaves for the second tree
             surface.blit(self.floater[0],
                         (self.position[0] + 6 - distanceFromCamera[0] + 20, self.position[1] + 18 - distanceFromCamera[1]))
@@ -109,7 +109,7 @@ class ObstacleFloat:
                         (self.position[0] + 7 - distanceFromCamera[0] - 6, self.position[1] - distanceFromCamera[1]))
             self.update_pos(self.position[0], self.position[1])
 
-        # leaves for the first tree
+            # leaves for the first tree
             surface.blit(self.floater[0],
                         (self.pos2[0] + 6 - distanceFromCamera[0] + 20, self.pos2[1] + 18 - distanceFromCamera[1]))
 
@@ -117,17 +117,16 @@ class ObstacleFloat:
                         (self.pos2[0] + 9 - distanceFromCamera[0], self.pos2[1] - distanceFromCamera[1]))
             self.update_pos(self.pos2[0], self.pos2[1])
 
-        # once the second leaves hit 100.0 they restart
+            # Once the second leaves hit 100.0 they restart
             if self.position[1] >= 100.0:
                 self.position = [320.0, 40.0]
                 self.update_pos(self.position[0], self.position[1])
-        # once the first leaves hit 90.0 they restart
+            # Once the first leaves hit 90.0 they restart
             if self.pos2[1] >= 90.0:
                 self.pos2 = [174.0, 42.5]
                 self.update_pos(self.pos2[0], self.pos2[1])
-    #get the ghosts
-        else:
 
+        else:
             surface.blit(
                 self.floater[0],
                 (self.position[0] + 6 - distanceFromCamera[0] + 20, self.position[1] + 18 - distanceFromCamera[1])
@@ -143,7 +142,3 @@ class ObstacleFloat:
             if self.position[1] >=20:
                 self.position = [682, 0]
                 self.update_pos(self.position[0], self.position[1])
-
-
-
-

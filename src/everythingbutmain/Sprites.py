@@ -2,13 +2,9 @@
 import pygame
 
 
-
-
-
-
-# Player class definition
 class Avatar:
     def __init__(self, maingame, avatar_type, position, size, gesture=None):
+         """Player class definition. Controls the movements of the player and finds its position in the game."""
         self.maingame = maingame  # Reference to the Game instanceone
         self.avatar_type = avatar_type  # Set the type of the player entity
         self.position = list(position)  # Initialize the player's position as a list
@@ -28,27 +24,24 @@ class Avatar:
             else:
                 self.sprite = self.maingame.resources[self.avatar_type]
 
-            print(self.avatar_type)
-
-
         # Current action of the player
         self.distance = (-2,-2)  # Offset for the animation rendering
         self.rotate = False  # Whether to flip the sprite horizontally
         #self.set_gesture('thing')  # Set the initial action to 'idle'
         self.airBourne = 0  # Counter for the time spent in the air
 
-    # Function to get the player's collision rectangle
     def rect(self):
+        """Function to get the player's collision rectangle."""
         return pygame.Rect(self.position[0], self.position[1], self.size[0], self.size[1])  # Return a Pygame rectangle representing the player's position and size
 
-    # Function to set the player's action (animation state)
     def set_gesture(self, gesture):
+        """Function to set the player's action (animation state)."""
         if gesture != self.gesture:  # If the new action is different from the current action
             self.gesture = gesture  # Update the current action
             self.sprite = self.maingame.resources[self.avatar_type + '/' + self.gesture].duplicate()  # Copy the animation for the new action
 
-    # Function to update the player's state
     def update_avatar(self, tilemap, movement=(0, 0)):
+        """Function to update the player's state."""
         self.collisions = {'up': False, 'down': False, 'right': False, 'left': False}  # Reset collision status
 
         # Calculate movement based on user input and velocity
@@ -86,7 +79,6 @@ class Avatar:
 
         self.avatar_velocity[1] = min(4, self.avatar_velocity[1] + 0.1)  # Increase downward velocity, capping at 4
 
-
         # Reset vertical velocity when colliding with ground or ceiling
         if self.collisions['down'] or self.collisions['up']:
             self.avatar_velocity[1] = 0
@@ -96,40 +88,39 @@ class Avatar:
 
         # Set player's action based on state
         if self.airBourne > 4:  # If in the air for too long, set action to jump
-           
-            #self.set_gesture('thing')
             self.set_gesture('jump')
         elif movement[0] != 0:  # If moving horizontally, set action to run
             self.set_gesture('run')
 
         else:  # Otherwise, set action to idle
-            #self.set_gesture('idle')
-            #self.set_gesture('thing')
             self.set_gesture('idle')
 
         self.sprite.advance()  # Update the current animation frame
+        
     def update_NPC(self):
+        """Function to go through the sprite of the NPC."""
         self.sprite.advance()
 
-        # Function to render the player on a given surface with an offset
     def render(self, surf, offset=(0, 0)):
+        """Function to render the player on a given surface with an offset"""
         surf.blit(pygame.transform.flip(self.sprite.current_image(), self.rotate, False),
                   (self.position[0] - offset[0] + self.distance[0], self.position[1] - offset[1] + self.distance[1]))  # Position the image with the offset
 
 class AnimationSequence:
     def __init__(self, frames, duration_per_frame=5, is_looping=True):
+        """Allows us to have animation in our game."""
         self.frames = frames  # Store the list of images for the animation
         self.is_looping = is_looping  # Whether the animation should loop
         self.duration_per_frame = duration_per_frame  # Duration of each image frame in the animation
         self.is_complete = False  # Whether the animation has finished
         self.current_frame_index = 0  # Current frame index in the animation
 
-    # Function to copy the animation (for state management)
     def duplicate(self):
+        """Function to copy the animation (for state management)"""
         return AnimationSequence(self.frames, self.duration_per_frame, self.is_looping)  # Return a new instance of the Animation class
 
-    # Function to update the animation frame
     def advance(self):
+        """Function to update the animation frame."""
         if self.is_looping:  # If the animation should loop
             self.current_frame_index = (self.current_frame_index + 1) % (self.duration_per_frame * len(self.frames))  # Loop through frames
         else:  # If the animation should not loop
@@ -137,6 +128,6 @@ class AnimationSequence:
             if self.current_frame_index >= self.duration_per_frame * len(self.frames) - 1:  # If the last frame is reached
                 self.is_complete = True  # Mark the animation as done
 
-    # Function to get the current image frame for rendering
     def current_image(self):
+        """Function to get the current image frame for rendering."""
         return self.frames[int(self.current_frame_index / self.duration_per_frame)]  # Return the current image frame based on the current frame index and image duration

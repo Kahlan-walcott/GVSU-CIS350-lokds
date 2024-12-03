@@ -1,9 +1,11 @@
 import pygame
 import random
 from everythingbutmain.Sprites import Avatar
-class Artifacts:
 
+
+class Artifacts:
     def __init__(self, maingame):
+        """Puts the collectable bones in random places on the map."""
         self.maingame = maingame
         self.not_picked_up = {}
         i = 0
@@ -19,7 +21,6 @@ class Artifacts:
                 i+=1
         else:
             for artifact in maingame.resources['artifacts']:
-
                 random_x = random.randint(0, 500)
                 random_y = random.randint(-9, 50)
                 while self.maingame.physics_rectangles([random_x, random_y]):
@@ -31,17 +32,15 @@ class Artifacts:
         self.canDogMoveOn = False
         self.distance = (-2, -2)
 
-
     def drawArtifacts(self, surface, distanceFromCamera=(0, 0)):
-
+        """Draws the bones on the screen."""
         for variantName, imageAndPosition in self.not_picked_up.items():
-
             surface.blit(imageAndPosition[0], (imageAndPosition[1][0] - distanceFromCamera[0],
                                                imageAndPosition[1][1] - distanceFromCamera[1]))
 
     def check_collision_with_artifacts(self, player_rect):
+        """Check if the player collides with the bones. If they do the bone gets deleted."""
         to_remove = []
-
         for variantName, imageAndPosition in self.not_picked_up.items():
             artifact_position = (imageAndPosition[1][0] + self.distance[0],
                                  imageAndPosition[1][1] + self.distance[1])
@@ -60,13 +59,9 @@ class Artifacts:
             self.canDogMoveOn = True
 
 
-
-
-
-
-
 class NPCs(Avatar):
     def __init__(self, maingame, avatar_type, position, size, gesture=None):
+        """Puts the NPC on the screen and checks for the player colliding with it."""
         super().__init__(maingame, avatar_type, position, size, gesture=None)
         self.maingame = maingame
         self.avatar_type =  avatar_type
@@ -79,25 +74,22 @@ class NPCs(Avatar):
         else:
             self.position = [742, 6]
 
-
-
-
     def drawNPC(self, surface, distanceFromCamera=(0, 0)):
+        """Draws the NPC on the screen."""
         surface.blit(self.avatar[0], (self.position[0] - distanceFromCamera[0],self.position[1] - distanceFromCamera[1]))
 
     def check_collision_with_NPC(self, player_rect, surface, distanceFromCamera=(0, 0)):
-
-
+        """Checks for the player colliding with the NPC."""
         NPC_position = (self.position[0] + self.distance[0], self.position[1] + self.distance[1])
         NPC_rect = pygame.Rect(NPC_position[0], NPC_position[1], self.size[0], self.size[1])
 
         if player_rect.colliderect(NPC_rect):
-
-
             return True
+
 
 class NPCMessage:
     def __init__(self, maingame, x_position, y_position, canDogMoveOn, message = ''):
+        """Displays a message/hint to the player when they collide with the NPC."""
         self.maingame = maingame
         self.x_position = x_position
         self.y_position = y_position
@@ -107,10 +99,13 @@ class NPCMessage:
         self.color = pygame.Color('pink')
         self.font = pygame.font.SysFont('Arial', 10)
         self.canDogMoveOn = canDogMoveOn
+        
     def setMessage(self, message):
+        """Allows a certain message to be set."""
         self.message = message
+        
     def drawMessage(self, screen, distanceFromCamera=(0, 0)):
-
+        """Draws a background for the message and the message."""
         rect = pygame.Rect(self.x_position - distanceFromCamera[0],
                            self.y_position - distanceFromCamera[1],
                            self.width, self.height)
@@ -122,10 +117,6 @@ class NPCMessage:
             self.setMessage('You have not collected\nall magical bones.\nGo back to collect\nmagical bones.')
         else:
             self.setMessage('You are so close!\nYou have all\nthe magical bones!\nTime to go home!!!')
-
-
-
-
 
         pygame.draw.rect(screen, self.color, rect)  # No border width means a solid fill
 
@@ -145,4 +136,3 @@ class NPCMessage:
 
             # Increase the y_offset for the next line to avoid overlap
             y_offset += text_surface.get_height() + 1
-

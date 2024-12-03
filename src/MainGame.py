@@ -9,23 +9,20 @@ import os
 BASE_IMAGE_DIR = 'artifacts/images/'
 
 
-
-
-
-
 def load_picture(file):
+    """Loads in only one picture."""
     picture = pygame.image.load(BASE_IMAGE_DIR + file).convert()
     picture.set_colorkey((0, 0, 0))
     return picture
 
 
 def load_pictures(file):
+    """Loads in a sprite."""
     pictures = []
     png_filesNjpg_Files = [f for f in os.listdir(BASE_IMAGE_DIR + file) if f.endswith('.png') or f.endswith('.jpg')]
     for img_name in sorted(png_filesNjpg_Files):
         pictures.append(load_picture(file + '/' + img_name))
     if os.path.exists(BASE_IMAGE_DIR + file):
-        print(f"File exists: {BASE_IMAGE_DIR + file}")
     return pictures
 
 
@@ -33,9 +30,9 @@ ADJACENT_OFFSETS = [(-1, 0), (-1, -1), (0, -1), (1, -1), (1, 0), (0, 0), (-1, 1)
 PHYSICS_TILES = {'grass', 'stone'}
 
 
-# Title screen
 class Title:
     def __init__(self):
+        """The starting screen."""
         pygame.init()
         pygame.display.set_caption('Main Menu')
         self.screen = pygame.display.set_mode((640, 480))
@@ -49,7 +46,7 @@ class Title:
         self.screen.blit(msgobj, coordinates)
 
     def title_screen(self):
-        # title screen game loop
+        """title screen game loop."""
         while True:
             # display background, start and exit buttons
             self.screen.blit(load_picture("titleBackground.png"), (0, 0))
@@ -95,6 +92,7 @@ class Title:
 
 class Adventure:
     def __init__(self, currentMap='map.json'):
+        """Loads in everything for the game and runs the entire game."""
         pygame.init()
         pygame.display.set_caption('Dog\'s Journey Home')
 
@@ -108,8 +106,6 @@ class Adventure:
         self.channel3 = pygame.mixer.Channel(2)
         self.channel3.set_volume(0.2)
         self.currentMap = currentMap
-
-       
 
         self.tile_dimension = 16
         self.tile_layout = {}
@@ -141,16 +137,13 @@ class Adventure:
             'ghost/left': AnimationSequence(load_pictures('entities/ghost/left'), 0.5),
             'ghost/right': AnimationSequence(load_pictures('entities/ghost/right'),0.5),
             'seaMonster' : load_picture('entities/seaMonster/0.png')
-
-
         }
         self.load_game('src/' + self.currentMap)
         self.scroll_offset = [0, 0]
         self.avatar = Avatar(self, 'player', (0, 0), (10, 10), 'thing')
         self.artifacts = Artifacts(self)
         self.chipmunk = NPCs(self, 'NPC/Chipmunk', (742, 6), (16, 16))
-        #[742, 6]
-        #[419, 86.1]
+
         self.tomato = NPCs(self, 'NPC/tomato', (419, 86.1), (16,16))
         self.current_animation = self.resources['player/thing'].duplicate()
         self.current_animation_Chipmunk = self.resources['NPC/Chipmunk'].duplicate()
@@ -163,8 +156,8 @@ class Adventure:
         self.ghosts = Ghosts(self)
         self.obstacle = ObstacleFloat(self, 'float')
 
-
     def surrounding_tiles(self, position):
+        """Makes sure none of the tiles are on top of each other."""
         tiles = []
         tile_position = (int(position[0] // self.tile_dimension), int(position[1] // self.tile_dimension))
         for offset in ADJACENT_OFFSETS:
@@ -189,15 +182,16 @@ class Adventure:
 
         # Display text
         screen.blit(text_surface, text_rect)
-       #To call later : self.display_congratulations(self.render_surface)
 
     def save_game(self, file):
+        """Allows the dimensions and exterior tiles to be added to the map."""
         f = open(file, 'w')
         json.dump({'tile_layout': self.tile_layout, 'tile_dimension': self.tile_dimension,
                    'exterior_tiles': self.exterior_tiles}, f)
         f.close()
 
     def load_game(self, file):
+        """Loads in the map."""
         f = open(file, 'r')
         level_data = json.load(f)
         f.close()
@@ -206,6 +200,7 @@ class Adventure:
         self.exterior_tiles = level_data['offgrid']
 
     def physics_rectangles(self, position):
+        """Sets the solid tiles."""
         rectangles = []
         for tile in self.surrounding_tiles(position):
             if tile['type'] in PHYSICS_TILES:
@@ -216,6 +211,7 @@ class Adventure:
         return rectangles
 
     def render(self, surface, offset=(0, 0)):
+        """Puts the tiles on the background."""
         for tile in self.exterior_tiles:
             surface.blit(self.resources[tile['type']][tile['variant']],
                          (tile['pos'][0] - offset[0], tile['pos'][1] - offset[1]))
@@ -229,19 +225,18 @@ class Adventure:
                                  (tile['pos'][0] * self.tile_dimension - offset[0],
                                   tile['pos'][1] * self.tile_dimension - offset[1]))
 
-
     def run(self):
+        """Runs the entire game. Renders all the resources on the visible screen."""
         play_game = True
         while play_game is True:
             if self.currentMap == 'map.json':
                 self.render_surface.blit(self.resources['background'], (0, 0))
             else:
                 self.render_surface.blit(self.resources['forest-background'], (0, 0))
-            # self.render_surface.blit(self.resources['artifacts'][0], (300,110))
-            #print(self.avatar.position[0], self.avatar.position[1])
+
             if self.avatar.avatar_velocity[1] > 2.5:
 
-                    # Check if the sound is not already playing
+                # Check if the sound is not already playing
                 if not self.channel3.get_busy():
                     self.channel3.play(pygame.mixer.Sound('artifacts/artifacts_falling.mp3'))
 
@@ -298,7 +293,7 @@ class Adventure:
                     if event.key == pygame.K_UP:
                         self.channel2.play(pygame.mixer.Sound('artifacts/jump-sound.mp3'))
                         self.avatar.avatar_velocity[1] = -2
-                    # exit game back to main menu
+                    # exit the game back to the main menu
                     if event.key == pygame.K_ESCAPE:
                         play_game = False
                 if event.type == pygame.KEYUP:

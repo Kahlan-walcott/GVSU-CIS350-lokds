@@ -4,11 +4,11 @@ In this adventure game, players guide a resurrected dog through two distinct lev
 
 ## Team Members and Roles
 
-* [Olivia Foster](https://github.com/Olivia-Codes/CIS350-HW2-Foster.git) (Scrum leader)
-* [Kahlan Walcott](https://github.com/Kahlan-walcott/CIS350-HW2-Walcott) (Quality assurance engineer)
+* [Olivia Foster](https://github.com/Olivia-Codes/CIS350-HW2-Foster.git) (Scrum leader + Lead Developer)
+* [Kahlan Walcott](https://github.com/Kahlan-walcott/CIS350-HW2-Walcott) (QA engineer + Developer)
 * [Lasya Priya Vemalla](https://github.com/vemallal/CIS350-HW2-Vemalla) (QA engineer)
-* [Sanidhya Didagur](https://github.com/sdidagur1/CIS350-HW2-DIDAGUR.git) (User interface)
-* [Delaney Kelley](https://github.com/kelleyde/CIS350-HW2-Kelley.git) (product designer)
+* [Sanidhya Didagur](https://github.com/sdidagur1/CIS350-HW2-DIDAGUR.git) (Sound Designer + Developer)
+* [Delaney Kelley](https://github.com/kelleyde/CIS350-HW2-Kelley.git) (Graphics Designer + Developer)
 
 ## Prerequisites
 You should have some knowledge of Python and the command line.

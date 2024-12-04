@@ -168,7 +168,7 @@ class Adventure:
         
     def display_congratulations(self, screen):
         """Render the congratulations banner."""
-        banner_rect = pygame.Rect(0, 0, screen.get_width(), 100)
+        banner_rect = pygame.Rect(0, 0, screen.get_width(), screen.get_height())
         banner_rect.center = (screen.get_width() // 2, screen.get_height() // 2)
 
         # Draw banner background
@@ -176,7 +176,7 @@ class Adventure:
         pygame.draw.rect(screen, pygame.Color('black'), banner_rect, 5)  # Border
 
         # Render text
-        font = pygame.font.SysFont('Arial', 15, bold=True)
+        font = pygame.font.SysFont('Arial', 17, bold=True)
         text_surface = font.render("Congratulations! You reached home!", True, pygame.Color('black'))
         text_rect = text_surface.get_rect(center=banner_rect.center)
 

@@ -89,8 +89,8 @@ requirements will establish the quality constraints that must be satisfied.
 This section provides quick access to all the resources we developed for our game. 
 
 ### Diagrams
-* [use case diagram](../artifacts/use_case_diagram/UseCaseDiagram.pdf)
-* [class diagram]
+* [use case diagram](../artifacts/diagrams/use_case_diagram/UseCaseDiagram.pdf)
+* [class diagram](../artifacts/diagrams/Class_Diagram.pdf)
 * [sequence diagram]
 
 ### Jira Board

@@ -55,7 +55,7 @@ Using a mix of the agile scrum and prototype process models we anticipate the fo
 
 **Oct. 14th - Oct. 15th:**
 
-> - Decide on an overall scoring system and have the first level working.
+> - Have the first level working with tile graphics.
 
 **Oct. 16th - Oct. 23rd:**
 
@@ -63,7 +63,7 @@ Using a mix of the agile scrum and prototype process models we anticipate the fo
 
 **Oct. 24th - Nov. 8th:**
 
-> - Create the second level using unique json maps, graphics, and sound.
+> - Create the second level using unique .json maps, graphics, and sound.
 
 **Nov. 9th - Nov. 16th:**
 
@@ -73,7 +73,7 @@ Using a mix of the agile scrum and prototype process models we anticipate the fo
 > - Create a congratulations banner to be displayed upon completion of the second level. Create a starting menu the user sees before starting the game.
 
 **Nov. 22 - Dec. 1:**
-> - Decide on adding additional data storage to create a running scoreboard and or additional functionality. Create .EXE files. 
+> - Create the run instructions and add any additional functionality.
 
 
 # Anticipated Problems

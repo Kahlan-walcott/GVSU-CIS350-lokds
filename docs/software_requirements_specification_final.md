@@ -18,10 +18,10 @@ requirements will establish the quality constraints that must be satisfied.
 | FR2 |                                    The user shall be able to move the character around a 2d map.                                    | 
 | FR3 |                           The dog shall move left or right when the player presses the left or right key.                           | 
 | FR4 |                            A walk animation shall be displayed as the dog is moved with the arrow keys.                             |
-| FR5 |                            The dog shall switch based on the direction the user is making the dog go.                            |
+| FR5 |                            The dog shall switch based on the direction the user is making the dog go.                               |
 | FR6 |                             The game shall allow the character to jump when the user pushes the up key.                             |
 | FR7 |                                        A jump animation shall be displayed as the dog jumps.                                        |
-| FR8 |                                   An idle animation shall be displayed when the dog is not moving.                                   |
+| FR8 |                                   An idle animation shall be displayed when the dog is not moving.                                  |
 
 
 ### Interactive objects in the game
@@ -29,12 +29,12 @@ requirements will establish the quality constraints that must be satisfied.
 |  ID  |                                     Requirement                                     | 
 |:----:|:-----------------------------------------------------------------------------------:|
 | FR9  |             The game shall present collectible objects for the player.              | 
-| FR10 | The player shall be presented with objects to avoid influencing the dog's journey. | 
+| FR10 | The player shall be presented with objects to avoid influencing the dog's journey.  | 
 | FR11 |       The game shall have collectible artifacts spread throughout the world.        | 
 | FR12 |                    The artifact shall be meaningful to the dog.                     | 
 | FR13 |               The game shall allow the picked-up items to be stored.                |
 | FR14 |                    The dog shall overcome enemies at each level.                    |
-| FR15 |        The enemies shall make the level restart when the dog runs into them.        |
+| FR15 |        The enemies shall restart the level when the dog runs into them.             |
 
 ### The map visuals
 
@@ -42,7 +42,7 @@ requirements will establish the quality constraints that must be satisfied.
 |:----:|:------------------------------------------------------------------:|
 | FR16 | The game shall load in pixel tiles that look like stones or water. | 
 | FR17 |                     The tiles shall be 16X16.                      | 
-| FR18 |  The map shall have solid tiles that the dog can't pass through.   | 
+| FR18 |  The map shall have solid tiles the dog can't pass through.        | 
 | FR19 |             The solid tiles shall be grass and stone.              | 
 | FR20 |                The non-solid tiles shall be water.                 | 
 | FR21 |        The map shall consist of on-grid and off-grid tiles.        | 
@@ -66,7 +66,7 @@ requirements will establish the quality constraints that must be satisfied.
 
 |  ID   |                                                    Requirement                                                    | 
 |:-----:|:-----------------------------------------------------------------------------------------------------------------:| 
-| NFR7  |                     The game shall have a title screen telling the user how to play the game.                     | 
+| NFR7  |                     The game shall have an exit button that users can click.                                      | 
 | NFR8  |                               The title screen shall reflect the game's storyline.                                |
 | NFR9  |                The title screen shall have a button that the users can click on to start the game.                |
 | NFR10 |                      The user shall see a congratulatory screen when they complete the game.                      | 
@@ -80,7 +80,7 @@ requirements will establish the quality constraints that must be satisfied.
 | NFR13 | The NPC shall dictate if the character can move on to the next world. | 
 | NFR14 |                 The NPC shall have an idle animation.                 |
 | NFR15 |       The NPC shall show a message when the user runs into it.        |
-| NFR16 | The message shall tell the user if they missed any artifacts.  | 
+| NFR16 | The message shall tell the user if they missed any artifacts.         | 
 | NFR17 |     The NPC shall be different based on the world the dog is in.      |
 | NFR18 |   The message shall be different based on the world the dog is in.    |
 

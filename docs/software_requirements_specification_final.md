@@ -92,8 +92,9 @@ This section provides quick access to all the resources we developed for our gam
 * [use case diagram](../artifacts/diagrams/use_case_diagram/UseCaseDiagram.pdf)
 * [class diagram](../artifacts/diagrams/Class_Diagram.pdf)
 * [sequence diagram]
-* [Gantt chart]
-
+### Plans for the project
+* [First Gantt chart](../docs/homework4/groupwork/Gantt_chart.pdf)
+* [final Gantt chart]
 ### Jira Board
 * [Jira Board](https://lokds.atlassian.net/jira/software/projects/SCRUM/boards/1)
 

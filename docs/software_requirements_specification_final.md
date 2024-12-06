@@ -106,10 +106,7 @@ This section provides quick access to all the resources we developed for our gam
 * [first background](../artifacts/images/background.jpg)
 * [second background](../artifacts/images/forest-background.png)
 #### Artifacts
-* [first bone](../artifacts/images/artifacts/0.png)
-* [second bone](../artifacts/images/artifacts/1.png)
-* [third bone](../artifacts/images/artifacts/2.png)
-* [fourth bone](../artifacts/images/artifacts/3.png)
+* [magical bones](../artifacts/images/artifacts)
 #### Entities
 * [first NPC tomato idle](../artifacts/images/entities/NPC/tomato)
 * [second NPC chipmunk idle](../artifacts/images/entities/NPC/Chipmunk)

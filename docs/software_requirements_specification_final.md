@@ -1,6 +1,6 @@
 # Overview
 
-The purpose of this document is to establish the framework behind the development of A Dog's Journey. This framework 
+This document aims to establish the framework behind the development of A Dog's Journey. This framework 
 will be organized through functional and non-functional requirements.
 
 # Software Requirements
@@ -94,7 +94,7 @@ This section provides quick access to all the resources we developed for our gam
 * [sequence diagram]
 ### Plans for the project
 * [First Gantt chart](../docs/homework4/groupwork/Gantt_chart.pdf)
-* [final Gantt chart]
+* [final Gantt chart](../artifacts/plans/Gantt-Chart.pdf)
 ### Jira Board
 * [Jira Board](https://lokds.atlassian.net/jira/software/projects/SCRUM/boards/1)
 

@@ -58,7 +58,7 @@ requirements will establish the quality constraints that must be satisfied.
 | NFR1 | The user shall be able to hear background music and sound effects that match what is visually happening in the game. | 
 | NFR2 |                 The game shall play sound effects for specific actions such as jumping and falling.                  |
 | NFR3 |                  The background music shall be turned down to not overpower the sound effects.                       |
-| NFR4 |                    The sound effects shall only play when the specific action is being preformed.                    |
+| NFR4 |                    The sound effects shall only play when the specific action is being performed.                    |
 | NFR5 |                                    The background music shall continuously play.                                     |
 | NFR6 |                             The background music shall restart when the level restarts.                              |
 
@@ -86,7 +86,7 @@ requirements will establish the quality constraints that must be satisfied.
 
 # Software Artifacts
 
-This section provides quick access to all the resources we developed for our game. 
+This section provides quick access to all the resources we developed for our game. Including our diagrams, plans, agenda, progress throughout the semester, and the resources the game pulls. 
 
 ### Diagrams
 * [use case diagram](../artifacts/diagrams/use_case_diagram/UseCaseDiagram.pdf)
@@ -98,7 +98,7 @@ This section provides quick access to all the resources we developed for our gam
 ### Jira Board
 * [Jira Board](https://lokds.atlassian.net/jira/software/projects/SCRUM/boards/1)
 ### Progress throughout the semester
-[progress videos](progress_videos.md)
+* [progress videos](progress_videos.md)
 ### Resources the game pulls
 #### Music
 * [jump sound](../artifacts/jump-sound.mp3)

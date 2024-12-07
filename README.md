@@ -44,7 +44,7 @@ If you are using CentOS: type in $\textsf{\color{#DC143C}yum}$
 ### Running it
 1. If you just typed $\textsf{\color{#DC143C}import pygame}$, type $\textsf{\color{#DC143C}exit()}$
 1. Stay on this page, in the command line type $\textsf{\color{#DC143C}python3 src/Maingame.py}$
-2. Now you can play our game. Have fun!
+2. Now you can play our game. Have fun! (Use the left and right arrow keys to move left or right. Use the up arrow key to jump. Use the ESC key to restart the game from anywhere or exit the game from the home page. Use your mouse to click the start button or the exit button on the home page.)
 ## Mac users
 ### Setting it up
 #### Check your Python version:
@@ -63,7 +63,7 @@ If you are using CentOS: type in $\textsf{\color{#DC143C}yum}$
 ### Running it
 1. If you just typed $\textsf{\color{#DC143C}import pygame}$, type $\textsf{\color{#DC143C}exit()}$.
 2. On this page, in the command line type $\textsf{\color{#DC143C}python3 src/Maingame.py}$.
-3. Now you can play our game. Have fun!
+3. Now you can play our game. Have fun! (Use the left and right arrow keys to move left or right. Use the up arrow key to jump. Use the ESC key to restart the game from anywhere or exit the game from the home page. Use your mouse to click the start button or the exit button on the home page.)
 ## Windows users
 ### Setting it up (Command Prompt or Windows PowerShell)
 Note: There can be different Python commands so try all of them, they are $\textsf{\color{#DC143C}python}$, $\textsf{\color{#DC143C}python3}$, and $\textsf{\color{#DC143C}py}$. Wherever you see $\textsf{\color{#DC143C}py}$ replace it with the Python command that works for your computer. If $\textsf{\color{#DC143C}py}$ works then you can just copy what we have.
@@ -81,5 +81,5 @@ Note: There can be different Python commands so try all of them, they are $\text
 ### Running it
 1. If you just typed $\textsf{\color{#DC143C}import pygame}$, type  $\textsf{\color{#DC143C}exit()}$.
 2. Stay on this page, in the Command Prompt or Windows PowerShell type $\textsf{\color{#DC143C}py src/Maingame.py}$.
-3. Now you can play our game. Have fun!
+3. Now you can play our game. Have fun! (Use the left and right arrow keys to move left or right. Use the up arrow key to jump. Use the ESC key to restart the game from anywhere or exit the game from the home page. Use your mouse to click the start button or the exit button on the home page.)
 

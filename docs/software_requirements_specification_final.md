@@ -97,7 +97,8 @@ This section provides quick access to all the resources we developed for our gam
 * [final Gantt chart](../artifacts/plans/Gantt-Chart.pdf)
 ### Jira Board
 * [Jira Board](https://lokds.atlassian.net/jira/software/projects/SCRUM/boards/1)
-
+### Progress throughout the semester
+[progress videos](progress_videos.md)
 ### Resources the game pulls
 #### Music
 * [jump sound](../artifacts/jump-sound.mp3)

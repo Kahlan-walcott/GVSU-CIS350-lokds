@@ -6,7 +6,7 @@ In this adventure game, players guide a resurrected dog through two distinct lev
 
 * [Olivia Foster](https://github.com/Olivia-Codes/CIS350-HW2-Foster.git) (Scrum leader + Lead Developer)
 * [Kahlan Walcott](https://github.com/Kahlan-walcott/CIS350-HW2-Walcott) (QA engineer + Developer)
-* [Lasya Priya Vemalla](https://github.com/vemallal/CIS350-HW2-Vemalla) (QA engineer)
+* [Lasya Priya Vemalla](https://github.com/vemallal/CIS350-HW2-Vemalla) (QA engineer + Documentation Lead)
 * [Sanidhya Didagur](https://github.com/sdidagur1/CIS350-HW2-DIDAGUR.git) (Sound Designer + Developer)
 * [Delaney Kelley](https://github.com/kelleyde/CIS350-HW2-Kelley.git) (Graphics Designer + Developer)
 

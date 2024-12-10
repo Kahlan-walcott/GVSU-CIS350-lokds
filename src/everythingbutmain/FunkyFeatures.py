@@ -1,6 +1,7 @@
 """
 This file holds the code for the NPCs and the bones (Artifacts).
-The Artifacts class takes in the adventure class as a parameter. It puts the artifacts (bones) in random spots on the screen every time the level is restarted. It also allows the player to collide with them and collect them. 
+The Artifacts class takes in the adventure class as a parameter. It puts the artifacts (bones) in random spots on the screen every time the level is restarted. 
+It also allows the player to collide with them and collect them. 
 The NPCs class is a child class of the avatar class. It puts the NPC on the screen at a set position. It also checks for the player colliding with it. 
 The NPCMessage class controls the message that pops up on the screen when the player collides with it. It draws the text box and text on the screen.
 """

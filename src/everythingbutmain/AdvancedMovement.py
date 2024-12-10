@@ -1,7 +1,10 @@
 """
 This file holds the code for the enemies and the falling leaves.
-The Ghost class controls the movements of the enemies. It draws the enemies on the screen. It also uses the avatar class to set and update the positions based on the velocity. It also determines if the player has collided with an enemy. 
-The ObstacleFloat class controls the movement of the leaves. It sets and updates the position of the leaves based on its position on the y-axis. It also draws the leaves on the screen at a set position.
+The Ghost class controls the movements of the enemies. It draws the enemies on the screen. It also 
+uses the avatar class to set and update the positions based on the velocity. It also determines 
+if the player has collided with an enemy. 
+The ObstacleFloat class controls the movement of the leaves. It sets and updates the position of 
+the leaves based on its position on the y-axis. It also draws the leaves on the screen at a set position.
 """
 
 import pygame

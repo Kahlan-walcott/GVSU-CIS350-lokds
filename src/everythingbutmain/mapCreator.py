@@ -1,6 +1,12 @@
+"""
+This file holds the code to check the .json map. 
+This will go through the map and make sure everything is in the correct spot. It will create and new .json file that has everything the function checked.
+"""
+
 import json
 import numpy as np
 def update_json_file(input_file_path, output_file_path):
+    """Check everything in the input map and create and output .json map."""
     data = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
              0, 0, 0, 0,
              0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,

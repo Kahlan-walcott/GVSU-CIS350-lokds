@@ -1,3 +1,8 @@
+"""
+This file holds the code that runs the entire game and the title screen. 
+It loads the pictures into the game and draws them onto the screen. It also loads in sound and a .json map. It pulls in other classes from the other py files so the functions can be used in the game loop. It also pulls from the pygame, sys, json, and os libraries. It deciphers the .json map and places the tiles on the screen. While the game is running the visuals will update based on the direction the dog is going. When the game detects that the user completed the game it will display a congratulation sign.
+"""
+
 from everythingbutmain.Sprites import Avatar, AnimationSequence
 from everythingbutmain.FunkyFeatures import Artifacts, NPCs, NPCMessage
 from everythingbutmain.AdvancedMovement import Ghosts, ObstacleFloat
@@ -38,6 +43,7 @@ class Title:
         self.screen = pygame.display.set_mode((640, 480))
 
     def write(self, msg, size, color, coordinates):
+        """sets the font and put the message on the screen."""
         # set message, and size
         font = pygame.font.SysFont('Times New Roman', size, bold=True)
         # render font and color

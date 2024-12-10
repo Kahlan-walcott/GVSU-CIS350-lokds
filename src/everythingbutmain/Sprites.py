@@ -1,4 +1,10 @@
-# Separate definition of the Player class (could be in another module)
+"""
+This file holds the code for the player (Avatar) and the AnimationSequence.
+The Avatar class controls the position and movement of the player. It sets the players action and grabs the sprite. It also draws the player on the screen and creates a non-visible rectangle around the player to detect collisions.
+The AnimationSequence class runs through the sprite. It grabs the current image and updates it based on the sprite
+until the animation is compleat.
+"""
+
 import pygame
 
 

@@ -1,3 +1,8 @@
+"""
+This file holds code for the sine function.
+This is one idea we had for the movement of the leaves and the enemies.
+"""
+
 import math
 import pygame
 

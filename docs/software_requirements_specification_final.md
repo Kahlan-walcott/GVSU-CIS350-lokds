@@ -91,7 +91,7 @@ This section provides quick access to all the resources we developed for our gam
 ### Diagrams
 * [use case diagram](../artifacts/diagrams/use_case_diagram/UseCaseDiagram.pdf)
 * [class diagram](../artifacts/diagrams/Class_Diagram.pdf)
-* [sequence diagram]
+* [sequence diagram](../artifacts/diagrams/sequence.pdf)
 ### Plans for the project
 * [First Gantt chart](../docs/homework4/groupwork/Gantt_chart.pdf)
 * [final Gantt chart](../artifacts/plans/Gantt-Chart.pdf)
